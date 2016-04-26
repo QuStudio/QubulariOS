@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0471CCF6859007373C8 /* AppDelegate.swift */; };
+		BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0491CCF6859007373C8 /* ViewController.swift */; };
+		BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC04B1CCF6859007373C8 /* Main.storyboard */; };
+		BE8BC0501CCF6859007373C8 /* Qubular.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC04E1CCF6859007373C8 /* Qubular.xcdatamodeld */; };
+		BE8BC0521CCF6859007373C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC0511CCF6859007373C8 /* Assets.xcassets */; };
+		BE8BC0551CCF6859007373C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC0531CCF6859007373C8 /* LaunchScreen.storyboard */; };
+		BE8BC0601CCF685A007373C8 /* QubularTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC05F1CCF685A007373C8 /* QubularTests.swift */; };
+		BE8BC06B1CCF685A007373C8 /* QubularUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC06A1CCF685A007373C8 /* QubularUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE8BC05C1CCF685A007373C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE8BC03C1CCF6859007373C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE8BC0431CCF6859007373C8;
+			remoteInfo = Qubular;
+		};
+		BE8BC0671CCF685A007373C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE8BC03C1CCF6859007373C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE8BC0431CCF6859007373C8;
+			remoteInfo = Qubular;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE8BC0441CCF6859007373C8 /* Qubular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qubular.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE8BC0471CCF6859007373C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE8BC0491CCF6859007373C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE8BC04C1CCF6859007373C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE8BC04F1CCF6859007373C8 /* Qubular.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Qubular.xcdatamodel; sourceTree = "<group>"; };
+		BE8BC0511CCF6859007373C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE8BC0541CCF6859007373C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE8BC0561CCF6859007373C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE8BC05B1CCF685A007373C8 /* QubularTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QubularTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE8BC05F1CCF685A007373C8 /* QubularTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QubularTests.swift; sourceTree = "<group>"; };
+		BE8BC0611CCF685A007373C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE8BC0661CCF685A007373C8 /* QubularUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QubularUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE8BC06A1CCF685A007373C8 /* QubularUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QubularUITests.swift; sourceTree = "<group>"; };
+		BE8BC06C1CCF685A007373C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE8BC0411CCF6859007373C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8BC0581CCF685A007373C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8BC0631CCF685A007373C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE8BC03B1CCF6859007373C8 = {
+			isa = PBXGroup;
+			children = (
+				BE8BC0461CCF6859007373C8 /* Qubular */,
+				BE8BC05E1CCF685A007373C8 /* QubularTests */,
+				BE8BC0691CCF685A007373C8 /* QubularUITests */,
+				BE8BC0451CCF6859007373C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE8BC0451CCF6859007373C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE8BC0441CCF6859007373C8 /* Qubular.app */,
+				BE8BC05B1CCF685A007373C8 /* QubularTests.xctest */,
+				BE8BC0661CCF685A007373C8 /* QubularUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE8BC0461CCF6859007373C8 /* Qubular */ = {
+			isa = PBXGroup;
+			children = (
+				BE8BC0471CCF6859007373C8 /* AppDelegate.swift */,
+				BE8BC0491CCF6859007373C8 /* ViewController.swift */,
+				BE8BC04B1CCF6859007373C8 /* Main.storyboard */,
+				BE8BC0511CCF6859007373C8 /* Assets.xcassets */,
+				BE8BC0531CCF6859007373C8 /* LaunchScreen.storyboard */,
+				BE8BC0561CCF6859007373C8 /* Info.plist */,
+				BE8BC04E1CCF6859007373C8 /* Qubular.xcdatamodeld */,
+			);
+			path = Qubular;
+			sourceTree = "<group>";
+		};
+		BE8BC05E1CCF685A007373C8 /* QubularTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE8BC05F1CCF685A007373C8 /* QubularTests.swift */,
+				BE8BC0611CCF685A007373C8 /* Info.plist */,
+			);
+			path = QubularTests;
+			sourceTree = "<group>";
+		};
+		BE8BC0691CCF685A007373C8 /* QubularUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE8BC06A1CCF685A007373C8 /* QubularUITests.swift */,
+				BE8BC06C1CCF685A007373C8 /* Info.plist */,
+			);
+			path = QubularUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE8BC0431CCF6859007373C8 /* Qubular */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE8BC06F1CCF685A007373C8 /* Build configuration list for PBXNativeTarget "Qubular" */;
+			buildPhases = (
+				BE8BC0401CCF6859007373C8 /* Sources */,
+				BE8BC0411CCF6859007373C8 /* Frameworks */,
+				BE8BC0421CCF6859007373C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Qubular;
+			productName = Qubular;
+			productReference = BE8BC0441CCF6859007373C8 /* Qubular.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE8BC05A1CCF685A007373C8 /* QubularTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE8BC0721CCF685A007373C8 /* Build configuration list for PBXNativeTarget "QubularTests" */;
+			buildPhases = (
+				BE8BC0571CCF685A007373C8 /* Sources */,
+				BE8BC0581CCF685A007373C8 /* Frameworks */,
+				BE8BC0591CCF685A007373C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE8BC05D1CCF685A007373C8 /* PBXTargetDependency */,
+			);
+			name = QubularTests;
+			productName = QubularTests;
+			productReference = BE8BC05B1CCF685A007373C8 /* QubularTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE8BC0651CCF685A007373C8 /* QubularUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE8BC0751CCF685A007373C8 /* Build configuration list for PBXNativeTarget "QubularUITests" */;
+			buildPhases = (
+				BE8BC0621CCF685A007373C8 /* Sources */,
+				BE8BC0631CCF685A007373C8 /* Frameworks */,
+				BE8BC0641CCF685A007373C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE8BC0681CCF685A007373C8 /* PBXTargetDependency */,
+			);
+			name = QubularUITests;
+			productName = QubularUITests;
+			productReference = BE8BC0661CCF685A007373C8 /* QubularUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE8BC03C1CCF6859007373C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Oleg Dreyman";
+				TargetAttributes = {
+					BE8BC0431CCF6859007373C8 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = WK35K3FV5Z;
+					};
+					BE8BC05A1CCF685A007373C8 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = WK35K3FV5Z;
+						TestTargetID = BE8BC0431CCF6859007373C8;
+					};
+					BE8BC0651CCF685A007373C8 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = WK35K3FV5Z;
+						TestTargetID = BE8BC0431CCF6859007373C8;
+					};
+				};
+			};
+			buildConfigurationList = BE8BC03F1CCF6859007373C8 /* Build configuration list for PBXProject "Qubular" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE8BC03B1CCF6859007373C8;
+			productRefGroup = BE8BC0451CCF6859007373C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE8BC0431CCF6859007373C8 /* Qubular */,
+				BE8BC05A1CCF685A007373C8 /* QubularTests */,
+				BE8BC0651CCF685A007373C8 /* QubularUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE8BC0421CCF6859007373C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8BC0551CCF6859007373C8 /* LaunchScreen.storyboard in Resources */,
+				BE8BC0521CCF6859007373C8 /* Assets.xcassets in Resources */,
+				BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8BC0591CCF685A007373C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8BC0641CCF685A007373C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE8BC0401CCF6859007373C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */,
+				BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */,
+				BE8BC0501CCF6859007373C8 /* Qubular.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8BC0571CCF685A007373C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8BC0601CCF685A007373C8 /* QubularTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8BC0621CCF685A007373C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8BC06B1CCF685A007373C8 /* QubularUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE8BC05D1CCF685A007373C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE8BC0431CCF6859007373C8 /* Qubular */;
+			targetProxy = BE8BC05C1CCF685A007373C8 /* PBXContainerItemProxy */;
+		};
+		BE8BC0681CCF685A007373C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE8BC0431CCF6859007373C8 /* Qubular */;
+			targetProxy = BE8BC0671CCF685A007373C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE8BC04B1CCF6859007373C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE8BC04C1CCF6859007373C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE8BC0531CCF6859007373C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE8BC0541CCF6859007373C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE8BC06D1CCF685A007373C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE8BC06E1CCF685A007373C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE8BC0701CCF685A007373C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Qubular/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.Qubular;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE8BC0711CCF685A007373C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Qubular/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.Qubular;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BE8BC0731CCF685A007373C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QubularTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.QubularTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Qubular.app/Qubular";
+			};
+			name = Debug;
+		};
+		BE8BC0741CCF685A007373C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QubularTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.QubularTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Qubular.app/Qubular";
+			};
+			name = Release;
+		};
+		BE8BC0761CCF685A007373C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QubularUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.QubularUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Qubular;
+			};
+			name = Debug;
+		};
+		BE8BC0771CCF685A007373C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QubularUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.QubularUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Qubular;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE8BC03F1CCF6859007373C8 /* Build configuration list for PBXProject "Qubular" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE8BC06D1CCF685A007373C8 /* Debug */,
+				BE8BC06E1CCF685A007373C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE8BC06F1CCF685A007373C8 /* Build configuration list for PBXNativeTarget "Qubular" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE8BC0701CCF685A007373C8 /* Debug */,
+				BE8BC0711CCF685A007373C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE8BC0721CCF685A007373C8 /* Build configuration list for PBXNativeTarget "QubularTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE8BC0731CCF685A007373C8 /* Debug */,
+				BE8BC0741CCF685A007373C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE8BC0751CCF685A007373C8 /* Build configuration list for PBXNativeTarget "QubularUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE8BC0761CCF685A007373C8 /* Debug */,
+				BE8BC0771CCF685A007373C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE8BC04E1CCF6859007373C8 /* Qubular.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE8BC04F1CCF6859007373C8 /* Qubular.xcdatamodel */,
+			);
+			currentVersion = BE8BC04F1CCF6859007373C8 /* Qubular.xcdatamodel */;
+			path = Qubular.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BE8BC03C1CCF6859007373C8 /* Project object */;
+}
