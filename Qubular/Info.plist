@@ -36,5 +36,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Bitter-Bold.otf</string>
+		<string>Bitter-BoldItalic.otf</string>
+		<string>Bitter-Italic.otf</string>
+		<string>Bitter-Regular.otf</string>
+	</array>
 </dict>
 </plist>

@@ -1,0 +1,10 @@
+framework module Vocabulaire {
+  umbrella header "Vocabulaire.h"
+
+  export *
+  module * { export * }
+}
+
+module Vocabulaire.Swift {
+    header "Vocabulaire-Swift.h"
+}
