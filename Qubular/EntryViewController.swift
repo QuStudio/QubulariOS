@@ -9,22 +9,15 @@
 import UIKit
 import Vocabulaire
 
-class EntryViewController: UIViewController, ForeignLexemePresenter {
+class EntryViewController: UITableViewController {
     
     var entry: Entry?
     
-    @IBOutlet weak var foreignLexemeFormsLabel: UILabel!
-    @IBOutlet weak var foreignLexemeLemmaLabel: UILabel!
-    @IBOutlet weak var permissibilityLabel: UILabel!
-    @IBOutlet weak var permissibilityIndicator: UIView!
-    @IBOutlet weak var originLabel: UILabel!
-    @IBOutlet weak var foreignLexemeMeaningLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let entry = entry {
-            setup(with: entry.foreign)
-        }
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 400
+        tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
 
@@ -33,15 +26,51 @@ class EntryViewController: UIViewController, ForeignLexemePresenter {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Gesture recognition
+    // MARK: - Table View
     
-    @IBAction func formsExpandDidPress(sender: UITapGestureRecognizer) {
-        guard let label = sender.view as? UILabel else { return }
-        label.numberOfLines = label.numberOfLines > 0 ? 0 : 1
-        UIView.animateWithDuration(0.2) {
-            self.view.layoutIfNeeded()
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return entry?.natives.count ?? 0
+        default:
+            return 0
         }
     }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier("foreignLexemeHeader", forIndexPath: indexPath) as! ForeignLexemeHeaderTableViewCell
+            if let entry = entry {
+                cell.setup(with: entry.foreign)
+            }
+            return cell
+            
+        default:
+            let cell = tableView.dequeueReusableCellWithIdentifier("nativeCell", forIndexPath: indexPath)
+            if let entry = entry {
+                let native = entry.nativesByUsage[indexPath.row]
+                cell.textLabel?.text = native.lemma.view
+            }
+            return cell
+        }
+    }
+    
+    // MARK: - Gesture recognition
+    
+//    @IBAction func formsExpandDidPress(sender: UITapGestureRecognizer) {
+//        guard let label = sender.view as? UILabel else { return }
+//        label.numberOfLines = label.numberOfLines > 0 ? 0 : 1
+//        UIView.animateWithDuration(0.2) {
+//            self.view.layoutIfNeeded()
+//        }
+//    }
     
     
 

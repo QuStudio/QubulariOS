@@ -1,1 +1,2 @@
-github "QuStudio/Vocabulaire" ~> 0.3.2
+github "QuStudio/Vocabulaire" ~> 0.4.0
+github "AdvancedOperations/Operations" ~> 0.0.1

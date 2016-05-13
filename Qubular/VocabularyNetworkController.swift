@@ -8,33 +8,51 @@
 
 import Foundation
 import Vocabulaire
+import Operations
 
-final class SlovarNetworkController {
+protocol VocabularyController: class {
+    var cache: SlovarCache { get }
+    func prepareVocabulary(completion: (Void) -> Void)
+}
+
+final class VocabularyNetworkController: VocabularyController {
+    
+    let apiKey: String
+    let cache: SlovarCache
+    let versionController: VersionController
+    private let operationQueue = OperationQueue()
+    
+    init(apiKey: String, versionController: VersionController, cache: SlovarCache = SlovarCache()) {
+        self.apiKey = apiKey
+        self.cache = cache
+        self.versionController = versionController
+    }
+    
+    func prepareVocabulary(completion: (Void) -> Void) {
+        fetchVocabulary(completion)
+    }
+    
+    func fetchVocabulary(completion: (Void) -> Void) {
+        let getOperation = GetVocabularyOperation(cache: cache, completion: completion)
+        operationQueue.addOperation(getOperation)
+    }
+    
+}
+
+final class FakeVocabularyController: VocabularyController {
     
     let apiKey: String
     let cache: SlovarCache
     
-    weak var fetchingDelegate: SlovarFetchingDelegate?
-    
-    private static let slovarCacheKey = "slovar"
-    
-    static let slovarFetchingCompletedNotification = "slovarFetchingCompletedNotification"
-    let notificationCenter = NSNotificationCenter.defaultCenter()
-
     init(apiKey: String, cache: SlovarCache = SlovarCache()) {
         self.apiKey = apiKey
         self.cache = cache
     }
     
-//    func registerMe(registrant: SlovarFetchingNotificationReceiver) {
-//        notificationCenter.addObserver(registrant, selector: #selector(SlovarFetchingNotificationReceiver.slovarFetchingCompleted(_:)), name: SlovarNetworkController.slovarFetchingCompletedNotification, object: self)
-//    }
-    
-    func fetchSlovar() {
-        testFetchSlovar()
+    func prepareVocabulary(completion: (Void) -> Void) {
+        testFetchSlovar(completion)
     }
-    
-    func testFetchSlovar() {
+    func testFetchSlovar(completion: (Void) -> Void) {
         let queue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
         dispatch_async(queue) {
             let foreign = ForeignLexeme(lemma: Morpheme("Менеджер"),
@@ -54,21 +72,7 @@ final class SlovarNetworkController {
             let natives: Set = [native1, native2, native3]
             let voc = [Entry(id: 2, foreign: foreign, natives: natives)]
             self.cache.vocabulary = voc
-            self.notificationCenter.postNotification(NSNotification(name: SlovarNetworkController.slovarFetchingCompletedNotification, object: self, userInfo: ["cacheKey": SlovarNetworkController.slovarCacheKey]))
-            self.fetchingDelegate?.slovarFetchingCompleted()
+            completion()
         }
     }
-    
-}
-
-@objc protocol SlovarUpdateObserver: class {
-
-    func slovarDidUpdate(notification: NSNotification)
-
-}
-
-protocol SlovarFetchingDelegate: class {
-
-    func slovarFetchingCompleted()
-
 }

@@ -14,7 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let coreDataStack = CoreDataStack()
-    let networkController = SlovarNetworkController(apiKey: "test")
+    let vocabularyController: VocabularyController = {
+        let versionController = VersionController(version: .develop)
+        let contr = VocabularyNetworkController(apiKey: "test", versionController: versionController)
+        return contr
+    }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func passNetworkController() {
         guard let navigator = window?.rootViewController as? UINavigationController,
             viewController = navigator.viewControllers.first as? ViewController else { return }
-        viewController.networkController = networkController
+        viewController.vocabularyController = vocabularyController
+        print("passed")
     }
 
     func applicationWillResignActive(application: UIApplication) {

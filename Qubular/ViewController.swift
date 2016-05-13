@@ -9,11 +9,11 @@
 import UIKit
 import Vocabulaire
 
-class ViewController: UIViewController, SlovarUpdateObserver, UpdatingOnAppear {
+class ViewController: UIViewController {
 
     var vocabulary = Vocabulary()
 
-    weak var networkController: SlovarNetworkController!
+    weak var vocabularyController: VocabularyController!
     var dataUpdateAvailable = false
 
     @IBOutlet weak var testLabel: UILabel!
@@ -22,24 +22,7 @@ class ViewController: UIViewController, SlovarUpdateObserver, UpdatingOnAppear {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(networkController)
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        notificationCenter.removeObserver(self, name: SlovarNetworkController.slovarFetchingCompletedNotification, object: networkController)
-        networkController.fetchingDelegate = self
-        updateIfNewDataAvailable()
-    }
-
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        notificationCenter.addObserver(self, selector: #selector(slovarDidUpdate(_:)), name: SlovarNetworkController.slovarFetchingCompletedNotification, object: networkController)
-    }
-
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        testLabel.textColor = .redColor()
+        print(vocabularyController)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,12 +31,8 @@ class ViewController: UIViewController, SlovarUpdateObserver, UpdatingOnAppear {
     }
 
     @IBAction func testButtonDidPress(sender: UIButton) {
-        networkController.fetchSlovar()
-    }
-
-    func slovarDidUpdate(notification: NSNotification) {
-        if let vocabulary = networkController.cache.vocabulary {
-            self.vocabulary = vocabulary
+        vocabularyController.prepareVocabulary { [weak self] in
+            self?.slovarFetchingDidComplete()
         }
     }
 
@@ -78,11 +57,11 @@ class ViewController: UIViewController, SlovarUpdateObserver, UpdatingOnAppear {
 
 }
 
-extension ViewController: SlovarFetchingDelegate {
+extension ViewController {
     
-    func slovarFetchingCompleted() {
+    func slovarFetchingDidComplete() {
         onMainQueue {
-            if let vocabulary = self.networkController.cache.vocabulary {
+            if let vocabulary = self.vocabularyController.cache.vocabulary {
                 self.vocabulary = vocabulary
                 self.updateData()
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6A1CE4DE8500F984B4 /* Version.swift */; };
+		BE143C6D1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */; };
 		BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0471CCF6859007373C8 /* AppDelegate.swift */; };
 		BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0491CCF6859007373C8 /* ViewController.swift */; };
 		BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC04B1CCF6859007373C8 /* Main.storyboard */; };
@@ -16,10 +18,9 @@
 		BE8BC0601CCF685A007373C8 /* QubularTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC05F1CCF685A007373C8 /* QubularTests.swift */; };
 		BE8BC06B1CCF685A007373C8 /* QubularUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC06A1CCF685A007373C8 /* QubularUITests.swift */; };
 		BE8BC0791CCF6A8F007373C8 /* Vocabulaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BC0781CCF6A8F007373C8 /* Vocabulaire.framework */; };
-		BE8BC0801CCF964C007373C8 /* SlovarNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC07F1CCF964C007373C8 /* SlovarNetworkController.swift */; };
+		BE8BC0801CCF964C007373C8 /* VocabularyNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC07F1CCF964C007373C8 /* VocabularyNetworkController.swift */; };
 		BE8BC0841CCF9F02007373C8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0831CCF9F02007373C8 /* CoreDataStack.swift */; };
-		BE8BC0881CCFACE0007373C8 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0871CCFACE0007373C8 /* Global.swift */; };
-		BE8BC08B1CCFB02E007373C8 /* UpdatingOnAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC08A1CCFB02E007373C8 /* UpdatingOnAppear.swift */; };
+		BE8BC0881CCFACE0007373C8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0871CCFACE0007373C8 /* Extensions.swift */; };
 		BE8BC08D1CD11AFF007373C8 /* SlovarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC08C1CD11AFF007373C8 /* SlovarCache.swift */; };
 		BE8BC08F1CD1205A007373C8 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC08E1CD1205A007373C8 /* EntryViewController.swift */; };
 		BE8BC0951CD12A21007373C8 /* Bitter-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC0911CD12A21007373C8 /* Bitter-Bold.otf */; };
@@ -28,6 +29,16 @@
 		BE8BC0981CD12A21007373C8 /* Bitter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC0941CD12A21007373C8 /* Bitter-Regular.otf */; };
 		BE8BC09B1CD13622007373C8 /* ForeignLexemePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC09A1CD13622007373C8 /* ForeignLexemePresenter.swift */; };
 		BE8BC09D1CD139ED007373C8 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC09C1CD139ED007373C8 /* Presenter.swift */; };
+		BE8E8D381CE384A7004238FB /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E8D371CE384A7004238FB /* NetworkObserver.swift */; };
+		BE8E8D3A1CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E8D391CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift */; };
+		BEFD74EB1CD63BFC0066A71B /* SerializingParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD74EA1CD63BFC0066A71B /* SerializingParsing.swift */; };
+		BEFD74ED1CD649910066A71B /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = BEFD74EC1CD649910066A71B /* Cartfile */; };
+		BEFD74F01CD64B550066A71B /* DownloadVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD74EF1CD64B550066A71B /* DownloadVocabularyOperation.swift */; };
+		BEFD74F21CD64B700066A71B /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD74F11CD64B700066A71B /* Operations.framework */; };
+		BEFD750A1CD655460066A71B /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD74F11CD64B700066A71B /* Operations.framework */; };
+		BEFD750B1CD655480066A71B /* Vocabulaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BC0781CCF6A8F007373C8 /* Vocabulaire.framework */; };
+		BEFD750D1CD65BA50066A71B /* ParseVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD750C1CD65BA50066A71B /* ParseVocabularyOperation.swift */; };
+		BEFD750F1CD65D930066A71B /* GetVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE143C6A1CE4DE8500F984B4 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareVocabularyOperation.swift; sourceTree = "<group>"; };
 		BE8BC0441CCF6859007373C8 /* Qubular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qubular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8BC0471CCF6859007373C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8BC0491CCF6859007373C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +76,9 @@
 		BE8BC06A1CCF685A007373C8 /* QubularUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QubularUITests.swift; sourceTree = "<group>"; };
 		BE8BC06C1CCF685A007373C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8BC0781CCF6A8F007373C8 /* Vocabulaire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vocabulaire.framework; path = Carthage/Build/iOS/Vocabulaire.framework; sourceTree = "<group>"; };
-		BE8BC07F1CCF964C007373C8 /* SlovarNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlovarNetworkController.swift; sourceTree = "<group>"; };
+		BE8BC07F1CCF964C007373C8 /* VocabularyNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyNetworkController.swift; sourceTree = "<group>"; };
 		BE8BC0831CCF9F02007373C8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		BE8BC0871CCFACE0007373C8 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		BE8BC08A1CCFB02E007373C8 /* UpdatingOnAppear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatingOnAppear.swift; sourceTree = "<group>"; };
+		BE8BC0871CCFACE0007373C8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BE8BC08C1CD11AFF007373C8 /* SlovarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlovarCache.swift; sourceTree = "<group>"; };
 		BE8BC08E1CD1205A007373C8 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		BE8BC0911CD12A21007373C8 /* Bitter-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Bold.otf"; sourceTree = "<group>"; };
@@ -75,6 +87,14 @@
 		BE8BC0941CD12A21007373C8 /* Bitter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Regular.otf"; sourceTree = "<group>"; };
 		BE8BC09A1CD13622007373C8 /* ForeignLexemePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeignLexemePresenter.swift; sourceTree = "<group>"; };
 		BE8BC09C1CD139ED007373C8 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		BE8E8D371CE384A7004238FB /* NetworkObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
+		BE8E8D391CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeignLexemeHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		BEFD74EA1CD63BFC0066A71B /* SerializingParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializingParsing.swift; sourceTree = "<group>"; };
+		BEFD74EC1CD649910066A71B /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		BEFD74EF1CD64B550066A71B /* DownloadVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadVocabularyOperation.swift; sourceTree = "<group>"; };
+		BEFD74F11CD64B700066A71B /* Operations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Operations.framework; path = Carthage/Build/iOS/Operations.framework; sourceTree = "<group>"; };
+		BEFD750C1CD65BA50066A71B /* ParseVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseVocabularyOperation.swift; sourceTree = "<group>"; };
+		BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetVocabularyOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE8BC0791CCF6A8F007373C8 /* Vocabulaire.framework in Frameworks */,
+				BEFD74F21CD64B700066A71B /* Operations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFD750A1CD655460066A71B /* Operations.framework in Frameworks */,
+				BEFD750B1CD655480066A71B /* Vocabulaire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,9 +126,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE143C6E1CE5E51700F984B4 /* App Logic */ = {
+			isa = PBXGroup;
+			children = (
+				BEFD74EE1CD64B1F0066A71B /* Operations */,
+				BE8BC07E1CCF9634007373C8 /* Network */,
+				BE8BC07B1CCF9626007373C8 /* Model */,
+			);
+			name = "App Logic";
+			sourceTree = "<group>";
+		};
+		BE143C6F1CE5E53500F984B4 /* View Logic */ = {
+			isa = PBXGroup;
+			children = (
+				BE8BC07C1CCF962B007373C8 /* Views */,
+				BE8BC07D1CCF962F007373C8 /* ViewControllers */,
+				BE8BC0991CD135EF007373C8 /* Presenters */,
+			);
+			name = "View Logic";
+			sourceTree = "<group>";
+		};
 		BE8BC03B1CCF6859007373C8 = {
 			isa = PBXGroup;
 			children = (
+				BEFD74F11CD64B700066A71B /* Operations.framework */,
+				BEFD74EC1CD649910066A71B /* Cartfile */,
 				BE8BC0781CCF6A8F007373C8 /* Vocabulaire.framework */,
 				BE8BC0461CCF6859007373C8 /* Qubular */,
 				BE8BC05E1CCF685A007373C8 /* QubularTests */,
@@ -128,19 +173,15 @@
 		BE8BC0461CCF6859007373C8 /* Qubular */ = {
 			isa = PBXGroup;
 			children = (
-				BE8BC0991CD135EF007373C8 /* Presenters */,
-				BE8BC0891CCFB018007373C8 /* Architecture */,
-				BE8BC07E1CCF9634007373C8 /* Network */,
-				BE8BC07D1CCF962F007373C8 /* ViewControllers */,
-				BE8BC07C1CCF962B007373C8 /* Views */,
-				BE8BC07B1CCF9626007373C8 /* Model */,
+				BE143C6F1CE5E53500F984B4 /* View Logic */,
+				BE143C6E1CE5E51700F984B4 /* App Logic */,
 				BE8BC0471CCF6859007373C8 /* AppDelegate.swift */,
 				BE8BC04B1CCF6859007373C8 /* Main.storyboard */,
 				BE8BC0511CCF6859007373C8 /* Assets.xcassets */,
 				BE8BC0531CCF6859007373C8 /* LaunchScreen.storyboard */,
 				BE8BC0561CCF6859007373C8 /* Info.plist */,
 				BE8BC04E1CCF6859007373C8 /* Qubular.xcdatamodeld */,
-				BE8BC0871CCFACE0007373C8 /* Global.swift */,
+				BE8BC0871CCFACE0007373C8 /* Extensions.swift */,
 			);
 			path = Qubular;
 			sourceTree = "<group>";
@@ -167,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				BE8BC0831CCF9F02007373C8 /* CoreDataStack.swift */,
+				BEFD74EA1CD63BFC0066A71B /* SerializingParsing.swift */,
+				BE143C6A1CE4DE8500F984B4 /* Version.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -174,6 +217,7 @@
 		BE8BC07C1CCF962B007373C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE8E8D391CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -190,18 +234,10 @@
 		BE8BC07E1CCF9634007373C8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				BE8BC07F1CCF964C007373C8 /* SlovarNetworkController.swift */,
+				BE8BC07F1CCF964C007373C8 /* VocabularyNetworkController.swift */,
 				BE8BC08C1CD11AFF007373C8 /* SlovarCache.swift */,
 			);
 			name = Network;
-			sourceTree = "<group>";
-		};
-		BE8BC0891CCFB018007373C8 /* Architecture */ = {
-			isa = PBXGroup;
-			children = (
-				BE8BC08A1CCFB02E007373C8 /* UpdatingOnAppear.swift */,
-			);
-			name = Architecture;
 			sourceTree = "<group>";
 		};
 		BE8BC0901CD129D1007373C8 /* Resources */ = {
@@ -222,6 +258,18 @@
 				BE8BC09A1CD13622007373C8 /* ForeignLexemePresenter.swift */,
 			);
 			name = Presenters;
+			sourceTree = "<group>";
+		};
+		BEFD74EE1CD64B1F0066A71B /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				BEFD74EF1CD64B550066A71B /* DownloadVocabularyOperation.swift */,
+				BEFD750C1CD65BA50066A71B /* ParseVocabularyOperation.swift */,
+				BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */,
+				BE8E8D371CE384A7004238FB /* NetworkObserver.swift */,
+				BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +382,7 @@
 			files = (
 				BE8BC0981CD12A21007373C8 /* Bitter-Regular.otf in Resources */,
 				BE8BC0551CCF6859007373C8 /* LaunchScreen.storyboard in Resources */,
+				BEFD74ED1CD649910066A71B /* Cartfile in Resources */,
 				BE8BC0521CCF6859007373C8 /* Assets.xcassets in Resources */,
 				BE8BC0951CD12A21007373C8 /* Bitter-Bold.otf in Resources */,
 				BE8BC0971CD12A21007373C8 /* Bitter-Italic.otf in Resources */,
@@ -366,6 +415,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Vocabulaire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Operations.framework",
 			);
 			outputPaths = (
 			);
@@ -380,16 +430,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFD750F1CD65D930066A71B /* GetVocabularyOperation.swift in Sources */,
+				BEFD74F01CD64B550066A71B /* DownloadVocabularyOperation.swift in Sources */,
+				BE8E8D381CE384A7004238FB /* NetworkObserver.swift in Sources */,
 				BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */,
+				BEFD750D1CD65BA50066A71B /* ParseVocabularyOperation.swift in Sources */,
 				BE8BC09D1CD139ED007373C8 /* Presenter.swift in Sources */,
-				BE8BC0801CCF964C007373C8 /* SlovarNetworkController.swift in Sources */,
-				BE8BC08B1CCFB02E007373C8 /* UpdatingOnAppear.swift in Sources */,
+				BE143C6D1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift in Sources */,
+				BE8BC0801CCF964C007373C8 /* VocabularyNetworkController.swift in Sources */,
+				BE8E8D3A1CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift in Sources */,
+				BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */,
 				BE8BC0841CCF9F02007373C8 /* CoreDataStack.swift in Sources */,
 				BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */,
 				BE8BC09B1CD13622007373C8 /* ForeignLexemePresenter.swift in Sources */,
 				BE8BC08F1CD1205A007373C8 /* EntryViewController.swift in Sources */,
+				BEFD74EB1CD63BFC0066A71B /* SerializingParsing.swift in Sources */,
 				BE8BC0501CCF6859007373C8 /* Qubular.xcdatamodeld in Sources */,
-				BE8BC0881CCFACE0007373C8 /* Global.swift in Sources */,
+				BE8BC0881CCFACE0007373C8 /* Extensions.swift in Sources */,
 				BE8BC08D1CD11AFF007373C8 /* SlovarCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +621,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QubularTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.QubularTests;
@@ -576,6 +637,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QubularTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.QubularTests;
