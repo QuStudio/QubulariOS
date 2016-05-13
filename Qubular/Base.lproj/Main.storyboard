@@ -105,21 +105,23 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="265" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqV-jh-JQ6">
                                                     <rect key="frame" x="0.0" y="0.0" width="574" height="171"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="jvE-ZB-mPZ">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvE-ZB-mPZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="171" height="171"/>
                                                             <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="jvE-ZB-mPZ" secondAttribute="height" multiplier="1:1" id="HSw-b2-AJq"/>
-                                                                <constraint firstAttribute="height" constant="171" id="o7Y-r9-79V"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="255" horizontalCompressionResistancePriority="751" text="Менеджер" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-Ya-avQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" text="Менеджер" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-Ya-avQ">
                                                             <rect key="frame" x="181" y="0.0" width="393" height="171"/>
                                                             <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="40"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="jvE-ZB-mPZ" firstAttribute="height" secondItem="XrI-Ya-avQ" secondAttribute="height" id="nUq-rU-VOb"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="(Менеджер, Менеджуля)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHl-hr-2Q9">
                                                     <rect key="frame" x="0.0" y="181" width="574" height="0.0"/>
@@ -137,13 +139,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="245" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-6f-gwk">
                                                     <rect key="frame" x="0.0" y="201" width="574" height="0.0"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" misplaced="YES" text="Происхождение:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iZ-ZY-618">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Происхождение:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iZ-ZY-618">
                                                             <rect key="frame" x="0.0" y="0.0" width="105" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Bitter-Italic" family="Bitter" pointSize="13"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Manager (англ.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDm-MQ-YaR">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager (англ.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDm-MQ-YaR">
                                                             <rect key="frame" x="110" y="0.0" width="464" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="13"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
