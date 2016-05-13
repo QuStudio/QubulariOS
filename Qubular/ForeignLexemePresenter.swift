@@ -14,21 +14,21 @@ protocol ForeignLexemePresenter {
 
     weak var foreignLexemeLemmaLabel: UILabel! { get set }
     weak var foreignLexemeFormsLabel: UILabel! { get set }
-    weak var permissibilityLabel: UILabel! { get set }
+    // weak var permissibilityLabel: UILabel! { get set }
     weak var permissibilityIndicator: UIView! { get set }
     weak var originLabel: UILabel! { get set }
     weak var foreignLexemeMeaningLabel: UILabel! { get set }
 
 }
 
-extension ForeignLexemePresenter where Self: UIViewController {
+extension ForeignLexemePresenter {
     
     func setup(with foreignLexeme: ForeignLexeme) {
         foreignLexemeLemmaLabel.text = foreignLexeme.lemma.view
         foreignLexemeFormsLabel.text = foreignLexeme.forms.isEmpty ?
             "" : "(\(foreignLexeme.forms.map({ $0.view }).joinWithSeparator(", ")))"
-        permissibilityLabel.text = foreignLexeme.permissibility.russian
-        permissibilityIndicator.layer.cornerRadius = permissibilityLabel.frame.height / 2
+        // permissibilityLabel.text = foreignLexeme.permissibility.russian
+        permissibilityIndicator.layer.cornerRadius = permissibilityIndicator.frame.height / 2
         permissibilityIndicator.backgroundColor = foreignLexeme.permissibility.indicatorColor
         originLabel.text = foreignLexeme.origin.view
         foreignLexemeMeaningLabel.text = foreignLexeme.meaning
