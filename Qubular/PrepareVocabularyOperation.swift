@@ -35,11 +35,11 @@ class LatestVersionCondition: OperationCondition {
     
     func evaluateForOperation(operation: Operation, completion: OperationConditionResult -> Void) {
         guard let newestVersion = versionController.latestAvailableVersion else {
-            completion(.Failed(Error.NoNewestVersion as NSError))
+            completion(.Failed(error: Error.NoNewestVersion))
             return
         }
         if newestVersion > versionController.version {
-            completion(.Failed(Error.LatestVersionIsNotInstalled as NSError))
+            completion(.Failed(error: Error.LatestVersionIsNotInstalled))
             return
         }
         completion(.Satisfied)

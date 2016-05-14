@@ -22,7 +22,7 @@ final class VocabularyNetworkController: VocabularyController {
     let versionController: VersionController
     private let operationQueue = OperationQueue()
     
-    init(apiKey: String, versionController: VersionController, cache: SlovarCache = SlovarCache()) {
+    init(apiKey: String, versionController: VersionController, cache: SlovarCache = SlovarNSCache()) {
         self.apiKey = apiKey
         self.cache = cache
         self.versionController = versionController
@@ -30,6 +30,7 @@ final class VocabularyNetworkController: VocabularyController {
     
     func prepareVocabulary(completion: (Void) -> Void) {
         fetchVocabulary(completion)
+        //completion()
     }
     
     func fetchVocabulary(completion: (Void) -> Void) {
@@ -45,7 +46,7 @@ final class FakeVocabularyController: VocabularyController {
     let apiKey: String
     let cache: SlovarCache
     
-    init(apiKey: String, cache: SlovarCache = SlovarCache()) {
+    init(apiKey: String, cache: SlovarCache = SlovarNSCache()) {
         self.apiKey = apiKey
         self.cache = cache
     }

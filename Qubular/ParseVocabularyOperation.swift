@@ -48,7 +48,7 @@ class ParseVocabularyOperation: Operation {
                 finish()
             } else {
                 print("failed")
-                finishWithError(NSError(code: .ExecutionFailed))
+                finishWithError(OperationError.ExecutionFailed)
             }
         } catch let jsonError as NSError {
             print(jsonError)

@@ -31,7 +31,7 @@ struct NetworkObserver: OperationObserver {
     
     func operation(operation: Operation, didProduceOperation newOperation: NSOperation) { }
     
-    func operationDidFinish(operation: Operation, errors: [NSError]) {
+    func operationDidFinish(operation: Operation, errors: [ErrorType]) {
         dispatch_async(dispatch_get_main_queue()) {
             // Decrement the network indicator's "reference count".
             NetworkIndicatorController.sharedIndicatorController.networkActivityDidEnd()

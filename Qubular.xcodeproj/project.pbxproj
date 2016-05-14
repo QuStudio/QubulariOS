@@ -10,6 +10,9 @@
 		BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6A1CE4DE8500F984B4 /* Version.swift */; };
 		BE143C6D1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */; };
 		BE4772931CE7231300FF8DAC /* OperationErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772921CE7231300FF8DAC /* OperationErrorHandler.swift */; };
+		BE4772951CE7326D00FF8DAC /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */; };
+		BE4772971CE733F200FF8DAC /* VocabularyControllerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772961CE733F200FF8DAC /* VocabularyControllerUser.swift */; };
+		BE47729B1CE7551A00FF8DAC /* AdvancedSlovarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47729A1CE7551A00FF8DAC /* AdvancedSlovarCache.swift */; };
 		BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0471CCF6859007373C8 /* AppDelegate.swift */; };
 		BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0491CCF6859007373C8 /* ViewController.swift */; };
 		BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC04B1CCF6859007373C8 /* Main.storyboard */; };
@@ -63,6 +66,9 @@
 		BE143C6A1CE4DE8500F984B4 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareVocabularyOperation.swift; sourceTree = "<group>"; };
 		BE4772921CE7231300FF8DAC /* OperationErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrorHandler.swift; sourceTree = "<group>"; };
+		BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		BE4772961CE733F200FF8DAC /* VocabularyControllerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyControllerUser.swift; sourceTree = "<group>"; };
+		BE47729A1CE7551A00FF8DAC /* AdvancedSlovarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedSlovarCache.swift; sourceTree = "<group>"; };
 		BE8BC0441CCF6859007373C8 /* Qubular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qubular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8BC0471CCF6859007373C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8BC0491CCF6859007373C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				BE8BC07C1CCF962B007373C8 /* Views */,
 				BE8BC07D1CCF962F007373C8 /* ViewControllers */,
 				BE8BC0991CD135EF007373C8 /* Presenters */,
+				BE4772961CE733F200FF8DAC /* VocabularyControllerUser.swift */,
 			);
 			name = "View Logic";
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 			children = (
 				BE8BC0491CCF6859007373C8 /* ViewController.swift */,
 				BE8BC08E1CD1205A007373C8 /* EntryViewController.swift */,
+				BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				BE8BC07F1CCF964C007373C8 /* VocabularyNetworkController.swift */,
 				BE8BC08C1CD11AFF007373C8 /* SlovarCache.swift */,
 				BE4772921CE7231300FF8DAC /* OperationErrorHandler.swift */,
+				BE47729A1CE7551A00FF8DAC /* AdvancedSlovarCache.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -437,7 +446,9 @@
 				BEFD74F01CD64B550066A71B /* DownloadVocabularyOperation.swift in Sources */,
 				BE8E8D381CE384A7004238FB /* NetworkObserver.swift in Sources */,
 				BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */,
+				BE4772951CE7326D00FF8DAC /* EntriesTableViewController.swift in Sources */,
 				BEFD750D1CD65BA50066A71B /* ParseVocabularyOperation.swift in Sources */,
+				BE4772971CE733F200FF8DAC /* VocabularyControllerUser.swift in Sources */,
 				BE8BC09D1CD139ED007373C8 /* Presenter.swift in Sources */,
 				BE4772931CE7231300FF8DAC /* OperationErrorHandler.swift in Sources */,
 				BE143C6D1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift in Sources */,
@@ -450,6 +461,7 @@
 				BE8BC08F1CD1205A007373C8 /* EntryViewController.swift in Sources */,
 				BEFD74EB1CD63BFC0066A71B /* SerializingParsing.swift in Sources */,
 				BE8BC0501CCF6859007373C8 /* Qubular.xcdatamodeld in Sources */,
+				BE47729B1CE7551A00FF8DAC /* AdvancedSlovarCache.swift in Sources */,
 				BE8BC0881CCFACE0007373C8 /* Extensions.swift in Sources */,
 				BE8BC08D1CD11AFF007373C8 /* SlovarCache.swift in Sources */,
 			);
