@@ -34,6 +34,7 @@ final class VocabularyNetworkController: VocabularyController {
     
     func fetchVocabulary(completion: (Void) -> Void) {
         let getOperation = GetVocabularyOperation(cache: cache, completion: completion)
+        getOperation.qualityOfService = .UserInitiated
         operationQueue.addOperation(getOperation)
     }
     

@@ -9,6 +9,10 @@ Contains the code to manage the visibility of the network activity indicator
 import UIKit
 import Operations
 
+enum ServerError: ErrorType {
+    case Not200(statusCode: Int)
+}
+
 /**
     An `OperationObserver` that will cause the network activity indicator to appear
     as long as the `Operation` to which it is attached is executing.
