@@ -14,9 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let coreDataStack = CoreDataStack()
+    
     let vocabularyController: VocabularyController = {
         let versionController = VersionController(version: .develop)
-        let contr = VocabularyNetworkController(apiKey: "test", versionController: versionController)
+        let docsFolder = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+        let cacheFile = docsFolder.URLByAppendingPathComponent("entries.json")
+        let contr = VocabularyNetworkController(apiKey: "test", versionController: versionController, cache: SlovarFileCache(fileLocation: cacheFile))
         return contr
     }()
 
@@ -28,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func passNetworkController() {
         guard let navigator = window?.rootViewController as? UINavigationController,
-            viewController = navigator.viewControllers.first as? ViewController else { return }
+            viewController = navigator.viewControllers.first as? VocabularyControllerUser else { return }
         viewController.vocabularyController = vocabularyController
         print("passed")
     }

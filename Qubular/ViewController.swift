@@ -9,7 +9,7 @@
 import UIKit
 import Vocabulaire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, VocabularyControllerUser {
 
     var vocabulary = Vocabulary()
 
