@@ -76,7 +76,7 @@ private class CheckVersionOperation: Operation {
     
     func dataTaskDidFinish(versionData: NSData, response: NSURLResponse?) {
         if let response = response as? NSHTTPURLResponse where response.statusCode != 200 {
-            self.finishWithError(CheckVersionError.ServerError(statusCode: response.statusCode) as NSError)
+            self.finishWithError(ServerError.Not200(statusCode: response.statusCode) as NSError)
             return
         }
         do {
@@ -100,5 +100,4 @@ private class CheckVersionOperation: Operation {
 enum CheckVersionError: ErrorType {
     case JSONParsingFailed(jsonError: ErrorType)
     case CannotInitializeVersionFromJSON
-    case ServerError(statusCode: Int)
 }
