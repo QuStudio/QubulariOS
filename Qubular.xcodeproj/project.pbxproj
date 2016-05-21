@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6A1CE4DE8500F984B4 /* Version.swift */; };
 		BE143C6D1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */; };
+		BE1D5E701CEF88AB00B90A28 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D5E6F1CEF88AB00B90A28 /* IndicatorView.swift */; };
+		BE1D5E721CEF8AA100B90A28 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D5E711CEF8AA100B90A28 /* EntryTableViewCell.swift */; };
 		BE4772931CE7231300FF8DAC /* OperationErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772921CE7231300FF8DAC /* OperationErrorHandler.swift */; };
 		BE4772951CE7326D00FF8DAC /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */; };
 		BE4772971CE733F200FF8DAC /* VocabularyControllerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772961CE733F200FF8DAC /* VocabularyControllerUser.swift */; };
-		BE47729B1CE7551A00FF8DAC /* AdvancedSlovarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47729A1CE7551A00FF8DAC /* AdvancedSlovarCache.swift */; };
+		BE47729B1CE7551A00FF8DAC /* SaveVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47729A1CE7551A00FF8DAC /* SaveVocabularyOperation.swift */; };
 		BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0471CCF6859007373C8 /* AppDelegate.swift */; };
 		BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0491CCF6859007373C8 /* ViewController.swift */; };
 		BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC04B1CCF6859007373C8 /* Main.storyboard */; };
@@ -41,7 +43,7 @@
 		BEFD74F21CD64B700066A71B /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD74F11CD64B700066A71B /* Operations.framework */; };
 		BEFD750A1CD655460066A71B /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD74F11CD64B700066A71B /* Operations.framework */; };
 		BEFD750B1CD655480066A71B /* Vocabulaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BC0781CCF6A8F007373C8 /* Vocabulaire.framework */; };
-		BEFD750D1CD65BA50066A71B /* ParseVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD750C1CD65BA50066A71B /* ParseVocabularyOperation.swift */; };
+		BEFD750D1CD65BA50066A71B /* LoadVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD750C1CD65BA50066A71B /* LoadVocabularyOperation.swift */; };
 		BEFD750F1CD65D930066A71B /* GetVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +67,12 @@
 /* Begin PBXFileReference section */
 		BE143C6A1CE4DE8500F984B4 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareVocabularyOperation.swift; sourceTree = "<group>"; };
+		BE1D5E6F1CEF88AB00B90A28 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		BE1D5E711CEF8AA100B90A28 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		BE4772921CE7231300FF8DAC /* OperationErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrorHandler.swift; sourceTree = "<group>"; };
 		BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		BE4772961CE733F200FF8DAC /* VocabularyControllerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyControllerUser.swift; sourceTree = "<group>"; };
-		BE47729A1CE7551A00FF8DAC /* AdvancedSlovarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedSlovarCache.swift; sourceTree = "<group>"; };
+		BE47729A1CE7551A00FF8DAC /* SaveVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveVocabularyOperation.swift; sourceTree = "<group>"; };
 		BE8BC0441CCF6859007373C8 /* Qubular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qubular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8BC0471CCF6859007373C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8BC0491CCF6859007373C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +105,7 @@
 		BEFD74EC1CD649910066A71B /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		BEFD74EF1CD64B550066A71B /* DownloadVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadVocabularyOperation.swift; sourceTree = "<group>"; };
 		BEFD74F11CD64B700066A71B /* Operations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Operations.framework; path = Carthage/Build/iOS/Operations.framework; sourceTree = "<group>"; };
-		BEFD750C1CD65BA50066A71B /* ParseVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseVocabularyOperation.swift; sourceTree = "<group>"; };
+		BEFD750C1CD65BA50066A71B /* LoadVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVocabularyOperation.swift; sourceTree = "<group>"; };
 		BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetVocabularyOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				BE8E8D391CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift */,
+				BE1D5E6F1CEF88AB00B90A28 /* IndicatorView.swift */,
+				BE1D5E711CEF8AA100B90A28 /* EntryTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,7 +253,6 @@
 				BE8BC07F1CCF964C007373C8 /* VocabularyNetworkController.swift */,
 				BE8BC08C1CD11AFF007373C8 /* SlovarCache.swift */,
 				BE4772921CE7231300FF8DAC /* OperationErrorHandler.swift */,
-				BE47729A1CE7551A00FF8DAC /* AdvancedSlovarCache.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -276,10 +281,11 @@
 			isa = PBXGroup;
 			children = (
 				BEFD74EF1CD64B550066A71B /* DownloadVocabularyOperation.swift */,
-				BEFD750C1CD65BA50066A71B /* ParseVocabularyOperation.swift */,
+				BEFD750C1CD65BA50066A71B /* LoadVocabularyOperation.swift */,
 				BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */,
 				BE8E8D371CE384A7004238FB /* NetworkObserver.swift */,
 				BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */,
+				BE47729A1CE7551A00FF8DAC /* SaveVocabularyOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -442,13 +448,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1D5E721CEF8AA100B90A28 /* EntryTableViewCell.swift in Sources */,
 				BEFD750F1CD65D930066A71B /* GetVocabularyOperation.swift in Sources */,
 				BEFD74F01CD64B550066A71B /* DownloadVocabularyOperation.swift in Sources */,
 				BE8E8D381CE384A7004238FB /* NetworkObserver.swift in Sources */,
 				BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */,
 				BE4772951CE7326D00FF8DAC /* EntriesTableViewController.swift in Sources */,
-				BEFD750D1CD65BA50066A71B /* ParseVocabularyOperation.swift in Sources */,
+				BEFD750D1CD65BA50066A71B /* LoadVocabularyOperation.swift in Sources */,
 				BE4772971CE733F200FF8DAC /* VocabularyControllerUser.swift in Sources */,
+				BE1D5E701CEF88AB00B90A28 /* IndicatorView.swift in Sources */,
 				BE8BC09D1CD139ED007373C8 /* Presenter.swift in Sources */,
 				BE4772931CE7231300FF8DAC /* OperationErrorHandler.swift in Sources */,
 				BE143C6D1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift in Sources */,
@@ -461,7 +469,7 @@
 				BE8BC08F1CD1205A007373C8 /* EntryViewController.swift in Sources */,
 				BEFD74EB1CD63BFC0066A71B /* SerializingParsing.swift in Sources */,
 				BE8BC0501CCF6859007373C8 /* Qubular.xcdatamodeld in Sources */,
-				BE47729B1CE7551A00FF8DAC /* AdvancedSlovarCache.swift in Sources */,
+				BE47729B1CE7551A00FF8DAC /* SaveVocabularyOperation.swift in Sources */,
 				BE8BC0881CCFACE0007373C8 /* Extensions.swift in Sources */,
 				BE8BC08D1CD11AFF007373C8 /* SlovarCache.swift in Sources */,
 			);

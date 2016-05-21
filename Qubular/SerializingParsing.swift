@@ -148,7 +148,9 @@ extension Entry: Convertible {
             "foreign": foreign.representation,
             "natives": natives.map({ $0.representation }),
         ]
-        if let author = author { dict["author"] = author.representation }
+        if let author = author {
+            dict["author"] = author.representation
+        }
         return dict
     }
     init(from source: [String : AnyObject]) throws {

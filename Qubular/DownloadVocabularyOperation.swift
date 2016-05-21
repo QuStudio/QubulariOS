@@ -9,7 +9,7 @@
 import Foundation
 import Operations
 
-class DownloadVocabularyOperation: Operation {
+final class DownloadVocabularyOperation: Operation {
     
     let cacheFile: NSURL
     lazy var urlSession: NSURLSession = {
@@ -38,7 +38,7 @@ extension DownloadVocabularyOperation: NSURLSessionDownloadDelegate {
         // Possible error handling
         if let status = (downloadTask.response as? NSHTTPURLResponse)?.statusCode where status != 200 {
             print(status)
-            finishWithError(ServerError.Not200(statusCode: status) as NSError)
+            finishWithError(ServerError.Not200(statusCode: status))
             return
         }
         
@@ -49,7 +49,7 @@ extension DownloadVocabularyOperation: NSURLSessionDownloadDelegate {
         do {
             try fileManager.moveItemAtURL(location, toURL: cacheFile)
             finish()
-        } catch let error as NSError {
+        } catch let error {
             finishWithError(error)
         }
     }
