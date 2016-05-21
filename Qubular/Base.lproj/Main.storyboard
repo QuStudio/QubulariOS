@@ -27,11 +27,11 @@
             <objects>
                 <tableViewController id="2z8-ez-ZLv" customClass="EntryViewController" customModule="Qubular" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="xWx-Fo-P0Z">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="ffG-M5-NIM">
-                            <rect key="frame" x="0.0" y="253" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="317" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавлено пользователем flo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvy-dx-5Tq">
@@ -50,7 +50,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foreignLexemeHeader" rowHeight="170" id="pDT-C7-cph" customClass="ForeignLexemeHeaderTableViewCell" customModule="Qubular" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="170"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pDT-C7-cph" id="ej1-ei-qAs">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="170"/>
@@ -142,7 +142,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nativeCell" textLabel="hrV-DD-Eg7" rowHeight="55" style="IBUITableViewCellStyleDefault" id="sd5-bD-69Z">
-                                <rect key="frame" x="0.0" y="198" width="600" height="55"/>
+                                <rect key="frame" x="0.0" y="262" width="600" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sd5-bD-69Z" id="Rzt-tr-odh">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
@@ -177,7 +177,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vvZ-kd-iEm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="vKg-UC-YF0">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="vKg-UC-YF0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.97586137820512819" green="0.97586137820512819" blue="0.97586137820512819" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,7 +195,7 @@
         <!--Кубуляр-->
         <scene sceneID="dt8-Mc-afk">
             <objects>
-                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="dea-Mz-imq" customClass="EntriesTableViewController" customModule="Qubular" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dea-Mz-imq" customClass="EntriesTableViewController" customModule="Qubular" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqp-9h-OaY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

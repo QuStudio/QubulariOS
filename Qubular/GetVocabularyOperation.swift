@@ -25,6 +25,12 @@ final class GetVocabularyOperation: GroupOperation {
         parseOperation.addDependency(downloadOperation)
         
         super.init(operations: [downloadOperation, parseOperation])
+        downloadOperation.observe { (operation) in
+            operation.didFailed { errors in
+                self.finish(errors)
+                self.parseOperation.cancel()
+            }
+        }
         self.name = "Get Vocabulary"
     }
     
