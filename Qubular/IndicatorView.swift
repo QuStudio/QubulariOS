@@ -8,14 +8,22 @@
 
 import UIKit
 
-class IndicatorView: UIView {
+@IBDesignable class IndicatorView: UIView {
 
     enum Shape {
         case Circle
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     var shape: Shape = .Circle
-    var color: UIColor = .redColor()
+    @IBInspectable var color: UIColor = .redColor()
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

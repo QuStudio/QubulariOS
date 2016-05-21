@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let coreDataStack = CoreDataStack()
     
     let vocabularyController: VocabularyController = {
-        let versionController = VersionController(version: .develop)
-        let contr = VocabularyNetworkController(apiKey: "test", versionController: versionController)
+        let contr = VocabularyNetworkController(apiKey: "test")
 //        let fake = FakeVocabularyController(apiKey: "fake", cache: SlovarCache(delegate: nil))
         return contr
     }()

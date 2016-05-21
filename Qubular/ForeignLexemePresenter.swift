@@ -17,12 +17,6 @@ protocol ForeignLexemePresenting {
     
 }
 
-protocol NativesBriefPresenting {
-    
-    weak var nativesLabel: UILabel! { get set }
-    
-}
-
 protocol FullForeignLexemePresenting: ForeignLexemePresenting {
 
     weak var foreignLexemeLemmaLabel: UILabel! { get set }
@@ -48,14 +42,6 @@ final class ForeignLexemePresenter {
         presenting.originLabel.text = foreignLexeme.origin.view
         presenting.foreignLexemeMeaningLabel.text = foreignLexeme.meaning
     }
-}
-
-final class NativesBriefPresenter {
-    
-    func present(entry: Entry, on presenting: NativesBriefPresenting) {
-        presenting.nativesLabel.text = entry.nativesByUsage.map({ $0.lemma.view }).joinWithSeparator(", ")
-    }
-    
 }
 
 private extension ForeignLexeme.Permissibility {

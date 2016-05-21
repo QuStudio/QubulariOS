@@ -9,9 +9,13 @@
 import UIKit
 import Vocabulaire
 
-class EntryViewController: UITableViewController {
+class EntryViewController: UITableViewController, EntryRepresenting, ForeignPresenterUser {
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var addedByLabel: UILabel!
+    
+    // MARK: - Core
     
     var entry: Entry?
     
