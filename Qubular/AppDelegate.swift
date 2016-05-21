@@ -15,16 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let coreDataStack = CoreDataStack()
     
-    let vocabularyController: VocabularyController = {
-        let contr = VocabularyNetworkController(apiKey: "test")
-//        let fake = FakeVocabularyController(apiKey: "fake", cache: SlovarCache(delegate: nil))
-        return contr
-    }()
+    let vocabularyController = VocabularyNetworkController(apiKey: "test")
+    let errorController = ErrorController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setupWhisper()
         passNetworkController()
+        setupNavBar()
         return true
+    }
+    
+    func setupWhisper() {
+        if let navigator = window?.rootViewController as? UINavigationController {
+            let whisperController = WhisperController(whisperTo: navigator)
+            errorController.presenter = whisperController
+            vocabularyController.errorController = errorController
+            print(errorController.presenter)
+        }
     }
     
     func passNetworkController() {
@@ -32,6 +40,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             viewController = navigator.viewControllers.first as? VocabularyControllerUser else { return }
         viewController.vocabularyController = vocabularyController
         print("passed")
+    }
+    
+    func setupNavBar() {
+        let titleAttributes = [
+            NSFontAttributeName : UIFont(name: "Bitter-Regular", size: 17)!
+        ]
+        UINavigationBar.appearance().titleTextAttributes = titleAttributes
+        UIBarButtonItem.appearance().setTitleTextAttributes(titleAttributes, forState: .Normal)
     }
 
     func applicationWillResignActive(application: UIApplication) {

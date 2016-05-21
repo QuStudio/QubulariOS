@@ -21,6 +21,7 @@ class EntryViewController: UITableViewController, EntryRepresenting, ForeignPres
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = entry?.foreign.lemma.view
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 400
         addedByLabel.text = entry?.author.map({ "Добавлено пользователем \($0.username)" }) ?? ""

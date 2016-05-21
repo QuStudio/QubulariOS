@@ -31,7 +31,7 @@ class EntriesTableViewController: UITableViewController, VocabularyControllerUse
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
-        
+                
         searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -85,7 +85,6 @@ class EntriesTableViewController: UITableViewController, VocabularyControllerUse
         switch identifier {
         case "entryDetail":
             if let destination = segue.destinationViewController as? protocol<EntryRepresenting, ForeignPresenterUser> {
-                print(destination)
                 destination.entry = selectedEntry
                 destination.foreignPresenter = foreignPresenter
             }

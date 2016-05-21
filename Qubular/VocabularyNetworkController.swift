@@ -19,21 +19,22 @@ final class VocabularyNetworkController: VocabularyController {
     
     let apiKey: String
     let cache: SlovarCache
+    weak var errorController: ErrorController?
     private let operationQueue = OperationQueue()
     private let logObserver = LogObserver()
     
-    let cacheFile: NSURL = {
+    let entriesFileURL: NSURL = {
         let docsFolder = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
         let cacheFile = docsFolder.URLByAppendingPathComponent("entries.json")
         return cacheFile
     }()
     
-    private let loadOperation: LoadVocabularyFromFileOperation
+    private let initialLoadOperation: LoadVocabularyFromFileOperation
     init(apiKey: String) {
         self.apiKey = apiKey
         self.cache = SlovarCache()
-        self.loadOperation = LoadVocabularyFromFileOperation(file: cacheFile, vocabularyCache: cache)
-        loadOperation.observe { (operation) in
+        self.initialLoadOperation = LoadVocabularyFromFileOperation(file: entriesFileURL, vocabularyCache: cache)
+        initialLoadOperation.observe { (operation) in
             operation.didFinish { _ in
                 print("Loaded!")
             }
@@ -44,13 +45,12 @@ final class VocabularyNetworkController: VocabularyController {
         
         cache.delegate = self
         operationQueue.delegate = self
-        operationQueue.addOperation(loadOperation)
-        
+        operationQueue.addOperation(initialLoadOperation)
     }
     
     /// Asks controller to prepare vocabulary for viewing. Completion may be called multiple times (for example, after load from persistent storage or from the web).
     func prepareVocabulary(completion: (Void) -> Void) {
-        if loadOperation.finished {
+        if initialLoadOperation.finished {
             completion()
         }
         fetchVocabulary(completion)
@@ -59,13 +59,15 @@ final class VocabularyNetworkController: VocabularyController {
     private func fetchVocabulary(completion: (Void) -> Void) {
         let getOperation = GetVocabularyOperation(cache: cache)
         getOperation.observe { (operation) in
-            operation.didFinish { _ in completion() }
+            operation.didFinish { _ in
+                completion()
+            }
             operation.didFailed { (errors) in
-                print(errors)
+                print(self.errorController)
+                errors.forEach({ self.errorController?.errorDidHappen($0) })
             }
         }
         getOperation.qualityOfService = .UserInitiated
-        getOperation.addDependency(loadOperation)
         operationQueue.addOperation(getOperation)
     }
     
@@ -73,13 +75,16 @@ final class VocabularyNetworkController: VocabularyController {
 
 extension VocabularyNetworkController: SlovarCacheDelegate {
     func cacheDidUpdate(cache: SlovarCache) {
-        let serialize = SaveVocabularyToFileOperation(to: cacheFile, from: cache)
+        let serialize = SaveVocabularyToFileOperation(to: entriesFileURL, from: cache)
         operationQueue.addOperation(serialize)
     }
 }
 
 extension VocabularyNetworkController: OperationQueueDelegate {
     func operationQueue(operationQueue: OperationQueue, willAddOperation operation: NSOperation) {
+        if operation !== initialLoadOperation {
+            operation.addDependency(initialLoadOperation)
+        }
         if let operation = operation as? Operation {
             operation.addObserver(logObserver)
         }

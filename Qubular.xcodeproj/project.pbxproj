@@ -19,6 +19,10 @@
 		BE6B10861CF0918200616E32 /* EntryRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10851CF0918200616E32 /* EntryRepresenting.swift */; };
 		BE6B10881CF093EB00616E32 /* LogObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10871CF093EA00616E32 /* LogObserver.swift */; };
 		BE6B108A1CF0947F00616E32 /* FakeVocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10891CF0947F00616E32 /* FakeVocabularyController.swift */; };
+		BE6B108C1CF09A7900616E32 /* WhisperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108B1CF09A7900616E32 /* WhisperController.swift */; };
+		BE6B108E1CF09B7100616E32 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108D1CF09B7100616E32 /* ErrorPresenter.swift */; };
+		BE6B10901CF09C9400616E32 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108F1CF09C9400616E32 /* ErrorController.swift */; };
+		BE6B10921CF09F4C00616E32 /* Whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B10911CF09F4C00616E32 /* Whisper.framework */; };
 		BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0471CCF6859007373C8 /* AppDelegate.swift */; };
 		BE8BC04A1CCF6859007373C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8BC0491CCF6859007373C8 /* ViewController.swift */; };
 		BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8BC04B1CCF6859007373C8 /* Main.storyboard */; };
@@ -80,6 +84,10 @@
 		BE6B10851CF0918200616E32 /* EntryRepresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryRepresenting.swift; sourceTree = "<group>"; };
 		BE6B10871CF093EA00616E32 /* LogObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogObserver.swift; sourceTree = "<group>"; };
 		BE6B10891CF0947F00616E32 /* FakeVocabularyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeVocabularyController.swift; sourceTree = "<group>"; };
+		BE6B108B1CF09A7900616E32 /* WhisperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperController.swift; sourceTree = "<group>"; };
+		BE6B108D1CF09B7100616E32 /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		BE6B108F1CF09C9400616E32 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
+		BE6B10911CF09F4C00616E32 /* Whisper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Whisper.framework; path = Carthage/Build/iOS/Whisper.framework; sourceTree = "<group>"; };
 		BE8BC0441CCF6859007373C8 /* Qubular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qubular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8BC0471CCF6859007373C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8BC0491CCF6859007373C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 			files = (
 				BE8BC0791CCF6A8F007373C8 /* Vocabulaire.framework in Frameworks */,
 				BEFD74F21CD64B700066A71B /* Operations.framework in Frameworks */,
+				BE6B10921CF09F4C00616E32 /* Whisper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +156,7 @@
 		BE143C6E1CE5E51700F984B4 /* App Logic */ = {
 			isa = PBXGroup;
 			children = (
+				BE6B108F1CF09C9400616E32 /* ErrorController.swift */,
 				BEFD74EE1CD64B1F0066A71B /* Operations */,
 				BE8BC07E1CCF9634007373C8 /* Network */,
 				BE8BC07B1CCF9626007373C8 /* Model */,
@@ -161,6 +171,7 @@
 				BE8BC07D1CCF962F007373C8 /* ViewControllers */,
 				BE8BC0991CD135EF007373C8 /* Presenters */,
 				BE4772961CE733F200FF8DAC /* Users.swift */,
+				BE6B108B1CF09A7900616E32 /* WhisperController.swift */,
 			);
 			name = "View Logic";
 			sourceTree = "<group>";
@@ -169,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				BEFD74EC1CD649910066A71B /* Cartfile */,
+				BE6B10911CF09F4C00616E32 /* Whisper.framework */,
 				BEFD74F11CD64B700066A71B /* Operations.framework */,
 				BE8BC0781CCF6A8F007373C8 /* Vocabulaire.framework */,
 				BE8BC0461CCF6859007373C8 /* Qubular */,
@@ -192,6 +204,7 @@
 		BE8BC0461CCF6859007373C8 /* Qubular */ = {
 			isa = PBXGroup;
 			children = (
+				BE6B108D1CF09B7100616E32 /* ErrorPresenter.swift */,
 				BE143C6F1CE5E53500F984B4 /* View Logic */,
 				BE143C6E1CE5E51700F984B4 /* App Logic */,
 				BE8BC0471CCF6859007373C8 /* AppDelegate.swift */,
@@ -291,10 +304,10 @@
 				BEFD74EF1CD64B550066A71B /* DownloadVocabularyOperation.swift */,
 				BEFD750C1CD65BA50066A71B /* LoadVocabularyOperation.swift */,
 				BEFD750E1CD65D930066A71B /* GetVocabularyOperation.swift */,
-				BE8E8D371CE384A7004238FB /* NetworkObserver.swift */,
-				BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */,
 				BE47729A1CE7551A00FF8DAC /* SaveVocabularyOperation.swift */,
+				BE8E8D371CE384A7004238FB /* NetworkObserver.swift */,
 				BE6B10871CF093EA00616E32 /* LogObserver.swift */,
+				BE143C6C1CE4E0DC00F984B4 /* PrepareVocabularyOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -443,6 +456,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Vocabulaire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Operations.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Whisper.framework",
 			);
 			outputPaths = (
 			);
@@ -457,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6B108E1CF09B7100616E32 /* ErrorPresenter.swift in Sources */,
 				BE1D5E721CEF8AA100B90A28 /* EntryTableViewCell.swift in Sources */,
 				BEFD750F1CD65D930066A71B /* GetVocabularyOperation.swift in Sources */,
 				BEFD74F01CD64B550066A71B /* DownloadVocabularyOperation.swift in Sources */,
@@ -476,7 +491,9 @@
 				BE8E8D3A1CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift in Sources */,
 				BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */,
 				BE8BC0841CCF9F02007373C8 /* CoreDataStack.swift in Sources */,
+				BE6B10901CF09C9400616E32 /* ErrorController.swift in Sources */,
 				BE8BC0481CCF6859007373C8 /* AppDelegate.swift in Sources */,
+				BE6B108C1CF09A7900616E32 /* WhisperController.swift in Sources */,
 				BE8BC09B1CD13622007373C8 /* ForeignLexemePresenter.swift in Sources */,
 				BE8BC08F1CD1205A007373C8 /* EntryViewController.swift in Sources */,
 				BEFD74EB1CD63BFC0066A71B /* SerializingParsing.swift in Sources */,

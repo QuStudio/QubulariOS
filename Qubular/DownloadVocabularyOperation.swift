@@ -30,6 +30,11 @@ final class DownloadVocabularyOperation: Operation {
         task.resume()
     }
     
+    enum Error: ErrorType {
+        case CantMoveItem(systemError: ErrorType?)
+        case NetworkClientError(systemError: ErrorType?)
+    }
+    
 }
 
 extension DownloadVocabularyOperation: NSURLSessionDownloadDelegate {
@@ -50,13 +55,13 @@ extension DownloadVocabularyOperation: NSURLSessionDownloadDelegate {
             try fileManager.moveItemAtURL(location, toURL: cacheFile)
             finish()
         } catch let error {
-            finishWithError(error)
+            finishWithError(Error.CantMoveItem(systemError: error))
         }
     }
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
         if let error = error {
-            finishWithError(error)
+            finishWithError(Error.NetworkClientError(systemError: error))
         }
     }
     
