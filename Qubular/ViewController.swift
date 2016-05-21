@@ -61,10 +61,10 @@ extension ViewController {
     
     func slovarFetchingDidComplete() {
         onMainQueue {
-            if let vocabulary = self.vocabularyController.cache.vocabulary {
-                self.vocabulary = vocabulary
-                self.updateData()
-            }
+//            if let vocabulary = self.vocabularyController.cache.vocabulary {
+//                self.vocabulary = vocabulary
+//                self.updateData()
+//            }
         }
     }
     

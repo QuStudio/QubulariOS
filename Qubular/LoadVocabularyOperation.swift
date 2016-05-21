@@ -1,5 +1,5 @@
 //
-//  ParseVocabularyOperation.swift
+//  LoadVocabularyFromFileOperation.swift
 //  Qubular
 //
 //  Created by Oleg Dreyman on 01.05.16.
@@ -10,21 +10,21 @@ import Foundation
 import Operations
 import Vocabulaire
 
-class ParseVocabularyOperation: Operation {
+final class LoadVocabularyFromFileOperation: Operation {
     
     let cache: SlovarCache
-    let cacheFile: NSURL
+    let file: NSURL
     
-    init(cacheFile: NSURL, vocabularyCache: SlovarCache) {
-        self.cacheFile = cacheFile
+    init(file: NSURL, vocabularyCache: SlovarCache) {
+        self.file = file
         self.cache = vocabularyCache
         super.init()
         self.name = "Parse Vocabulary"
     }
     
     override func execute() {
-        print(cacheFile)
-        guard let stream = NSInputStream(URL: cacheFile) else {
+        print(file)
+        guard let stream = NSInputStream(URL: file) else {
             finish()
             return
         }
@@ -50,7 +50,7 @@ class ParseVocabularyOperation: Operation {
                 print("failed")
                 finishWithError(OperationError.ExecutionFailed)
             }
-        } catch let jsonError as NSError {
+        } catch let jsonError {
             print(jsonError)
             finishWithError(jsonError)
         }

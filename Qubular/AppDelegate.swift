@@ -17,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let vocabularyController: VocabularyController = {
         let versionController = VersionController(version: .develop)
-        let docsFolder = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-        let cacheFile = docsFolder.URLByAppendingPathComponent("entries.json")
-        let contr = VocabularyNetworkController(apiKey: "test", versionController: versionController, cache: SlovarFileCache(fileLocation: cacheFile))
+        let contr = VocabularyNetworkController(apiKey: "test", versionController: versionController)
+//        let fake = FakeVocabularyController(apiKey: "fake", cache: SlovarCache(delegate: nil))
         return contr
     }()
 
@@ -59,8 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         coreDataStack.saveContext()
     }
-
-    // MARK: - Core Data stack
 
 }
 

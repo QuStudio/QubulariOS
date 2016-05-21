@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class ForeignLexemeHeaderTableViewCell: UITableViewCell, ForeignLexemePresenter {
+class ForeignLexemeHeaderTableViewCell: UITableViewCell, FullForeignLexemePresenting {
     
     @IBOutlet weak var foreignLexemeFormsLabel: UILabel!
     @IBOutlet weak var foreignLexemeLemmaLabel: UILabel!
     // @IBOutlet weak var permissibilityLabel: UILabel!
-    @IBOutlet weak var permissibilityIndicator: UIView!
+    @IBOutlet weak var permissibilityIndicator: IndicatorView!
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var foreignLexemeMeaningLabel: UILabel!
     

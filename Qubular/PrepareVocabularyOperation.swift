@@ -76,7 +76,7 @@ private class CheckVersionOperation: Operation {
     
     func dataTaskDidFinish(versionData: NSData, response: NSURLResponse?) {
         if let response = response as? NSHTTPURLResponse where response.statusCode != 200 {
-            self.finishWithError(ServerError.Not200(statusCode: response.statusCode) as NSError)
+            self.finishWithError(ServerError.Not200(statusCode: response.statusCode))
             return
         }
         do {
@@ -84,10 +84,10 @@ private class CheckVersionOperation: Operation {
                 self.versionController.latestAvailableVersion = version
                 self.finish()
             } else {
-                self.finishWithError(CheckVersionError.CannotInitializeVersionFromJSON as NSError)
+                self.finishWithError(CheckVersionError.CannotInitializeVersionFromJSON)
             }
         } catch {
-            self.finishWithError(CheckVersionError.JSONParsingFailed(jsonError: error) as NSError)
+            self.finishWithError(CheckVersionError.JSONParsingFailed(jsonError: error))
         }
     }
     

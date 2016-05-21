@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vvZ-kd-iEm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vvZ-kd-iEm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -10,8 +10,12 @@
         <mutableArray key="Bitter-Italic.otf">
             <string>Bitter-Italic</string>
             <string>Bitter-Italic</string>
+            <string>Bitter-Italic</string>
         </mutableArray>
         <mutableArray key="Bitter-Regular.otf">
+            <string>Bitter-Regular</string>
+            <string>Bitter-Regular</string>
+            <string>Bitter-Regular</string>
             <string>Bitter-Regular</string>
             <string>Bitter-Regular</string>
             <string>Bitter-Regular</string>
@@ -22,27 +26,45 @@
         <scene sceneID="I5X-64-Wbf">
             <objects>
                 <tableViewController id="2z8-ez-ZLv" customClass="EntryViewController" customModule="Qubular" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="xWx-Fo-P0Z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="xWx-Fo-P0Z">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ffG-M5-NIM">
+                            <rect key="frame" x="0.0" y="253" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавлено пользователем flo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvy-dx-5Tq">
+                                    <rect key="frame" x="16" y="14" width="562" height="15"/>
+                                    <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="Xvy-dx-5Tq" secondAttribute="trailing" constant="14" id="2F9-dW-8Lh"/>
+                                <constraint firstItem="Xvy-dx-5Tq" firstAttribute="centerY" secondItem="ffG-M5-NIM" secondAttribute="centerY" id="Tu3-Pn-hBu"/>
+                                <constraint firstItem="Xvy-dx-5Tq" firstAttribute="leading" secondItem="ffG-M5-NIM" secondAttribute="leadingMargin" constant="8" id="gKd-7C-AIc"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foreignLexemeHeader" rowHeight="170" id="pDT-C7-cph" customClass="ForeignLexemeHeaderTableViewCell" customModule="Qubular" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pDT-C7-cph" id="ej1-ei-qAs">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dx6-Qe-CJ3">
-                                            <rect key="frame" x="18" y="8" width="574" height="153"/>
+                                            <rect key="frame" x="18" y="8" width="574" height="154"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HtS-QM-eIz" userLabel="Indicator+Lemma">
-                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="50"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtS-QM-eIz" userLabel="Indicator+Lemma">
+                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="49"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-Kz-3f3">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-Kz-3f3" customClass="IndicatorView" customModule="Qubular" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="18" width="17" height="17"/>
-                                                            <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="qPU-Kz-3f3" secondAttribute="height" multiplier="1:1" id="CoZ-Ke-s2B"/>
                                                             </constraints>
@@ -65,21 +87,21 @@
                                                         <constraint firstItem="qPU-Kz-3f3" firstAttribute="baseline" secondItem="XrI-Ya-avQ" secondAttribute="baseline" constant="-4" id="oBL-Xk-4wd"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="(Менеджер, Менеджуля)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHl-hr-2Q9">
-                                                    <rect key="frame" x="0.0" y="60" width="574" height="17"/>
+                                                <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="(Менеджер, Менеджуля)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHl-hr-2Q9">
+                                                    <rect key="frame" x="0.0" y="59" width="574" height="17"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" name="Bitter-Italic" family="Bitter" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="240" misplaced="YES" text="Человек, занимающий руководящую должность" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwM-yF-oNz" userLabel="Meaning">
-                                                    <rect key="frame" x="0.0" y="87" width="574" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="240" text="Человек, занимающий руководящую должность" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwM-yF-oNz" userLabel="Meaning">
+                                                    <rect key="frame" x="0.0" y="86" width="574" height="42"/>
                                                     <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="245" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-6f-gwk">
-                                                    <rect key="frame" x="0.0" y="137" width="574" height="16"/>
+                                                    <rect key="frame" x="0.0" y="138" width="574" height="16"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Происхождение:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iZ-ZY-618">
                                                             <rect key="frame" x="0.0" y="0.0" width="105" height="16"/>
@@ -114,12 +136,21 @@
                                     <outlet property="permissibilityIndicator" destination="qPU-Kz-3f3" id="EcW-Lj-DFH"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nativeCell" rowHeight="55" id="sd5-bD-69Z">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nativeCell" textLabel="hrV-DD-Eg7" rowHeight="55" style="IBUITableViewCellStyleDefault" id="sd5-bD-69Z">
                                 <rect key="frame" x="0.0" y="198" width="600" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sd5-bD-69Z" id="Rzt-tr-odh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hrV-DD-Eg7">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="55"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -128,6 +159,9 @@
                             <outlet property="delegate" destination="2z8-ez-ZLv" id="E0u-C0-R06"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="addedByLabel" destination="Xvy-dx-5Tq" id="UPB-Kn-Yba"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAz-W5-4Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,35 +190,71 @@
         <!--Кубуляр-->
         <scene sceneID="dt8-Mc-afk">
             <objects>
-                <tableViewController id="dea-Mz-imq" customClass="EntriesTableViewController" customModule="Qubular" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqp-9h-OaY">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="dea-Mz-imq" customClass="EntriesTableViewController" customModule="Qubular" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqp-9h-OaY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" textLabel="ceW-Za-Qp8" detailTextLabel="N8b-gn-meZ" style="IBUITableViewCellStyleValue1" id="iUE-Qy-l7p">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" rowHeight="77" id="iUE-Qy-l7p" customClass="EntryTableViewCell" customModule="Qubular" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iUE-Qy-l7p" id="6eQ-XQ-wgQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ceW-Za-Qp8">
-                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N8b-gn-meZ">
-                                            <rect key="frame" x="543" y="12" width="42" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9WP-9u-pnB">
+                                            <rect key="frame" x="16" y="8" width="576" height="60"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZM-ph-ILD" userLabel="Indicator+Lemma">
+                                                    <rect key="frame" x="0.0" y="0.0" width="576" height="30"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl0-ZR-y3v" customClass="IndicatorView" customModule="Qubular" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="10" width="10" height="10"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Dl0-ZR-y3v" secondAttribute="height" multiplier="1:1" id="8ng-gD-9CC"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Менеджер" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pid-Hf-JkE">
+                                                            <rect key="frame" x="18" y="0.0" width="558" height="30"/>
+                                                            <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="25"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="pid-Hf-JkE" firstAttribute="leading" secondItem="Dl0-ZR-y3v" secondAttribute="trailing" constant="8" id="I8H-tI-orN"/>
+                                                        <constraint firstItem="Dl0-ZR-y3v" firstAttribute="height" secondItem="pid-Hf-JkE" secondAttribute="height" multiplier="0.35" id="Kow-rI-akQ"/>
+                                                        <constraint firstItem="Dl0-ZR-y3v" firstAttribute="baseline" secondItem="pid-Hf-JkE" secondAttribute="baseline" constant="-4" id="L2z-j4-96G"/>
+                                                        <constraint firstItem="Dl0-ZR-y3v" firstAttribute="leading" secondItem="FZM-ph-ILD" secondAttribute="leading" id="XRC-BM-DHq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pid-Hf-JkE" secondAttribute="trailing" id="Xxi-lZ-emx"/>
+                                                        <constraint firstItem="pid-Hf-JkE" firstAttribute="top" secondItem="FZM-ph-ILD" secondAttribute="top" id="ZmY-bL-sLQ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pid-Hf-JkE" secondAttribute="bottom" id="gz2-Bo-x5j"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="755" text="Examples" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeL-i5-coR">
+                                                    <rect key="frame" x="0.0" y="35" width="576" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Bitter-Italic" family="Bitter" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9WP-9u-pnB" secondAttribute="bottom" id="GRi-Ee-rSG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9WP-9u-pnB" secondAttribute="trailing" id="XXR-Xh-fut"/>
+                                        <constraint firstItem="9WP-9u-pnB" firstAttribute="leading" secondItem="6eQ-XQ-wgQ" secondAttribute="leadingMargin" constant="8" id="abM-Ro-Dyi"/>
+                                        <constraint firstItem="9WP-9u-pnB" firstAttribute="top" secondItem="6eQ-XQ-wgQ" secondAttribute="topMargin" id="jwU-Vl-HSg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="foreignLexemeLemmaLabel" destination="pid-Hf-JkE" id="Dij-82-yTI"/>
+                                    <outlet property="nativesLabel" destination="eeL-i5-coR" id="AyJ-lZ-wAR"/>
+                                    <outlet property="permissibilityIndicator" destination="Dl0-ZR-y3v" id="vBF-Au-RHC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

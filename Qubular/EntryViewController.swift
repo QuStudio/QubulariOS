@@ -11,13 +11,15 @@ import Vocabulaire
 
 class EntryViewController: UITableViewController {
     
+    @IBOutlet weak var addedByLabel: UILabel!
+    
     var entry: Entry?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 400
-        tableView.tableFooterView = UIView()
+        addedByLabel.text = entry?.author.map({ "Добавлено пользователем \($0.username)" }) ?? ""
         // Do any additional setup after loading the view.
     }
 
@@ -43,12 +45,13 @@ class EntryViewController: UITableViewController {
         }
     }
     
+    var foreignPresenter: ForeignLexemePresenter!
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("foreignLexemeHeader", forIndexPath: indexPath) as! ForeignLexemeHeaderTableViewCell
             if let entry = entry {
-                cell.setup(with: entry.foreign)
+                foreignPresenter.present(entry.foreign, on: cell)
             }
             return cell
             

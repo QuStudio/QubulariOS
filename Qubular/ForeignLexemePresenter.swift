@@ -1,5 +1,5 @@
 //
-//  ForeignLexemePresenter.swift
+//  FullForeignLexemePresenting.swift
 //  Qubular
 //
 //  Created by Oleg Dreyman on 27.04.16.
@@ -10,30 +10,52 @@ import Foundation
 import Vocabulaire
 import UIKit
 
-protocol ForeignLexemePresenter {
+protocol ForeignLexemePresenting {
+    
+    weak var foreignLexemeLemmaLabel: UILabel! { get set }
+    weak var permissibilityIndicator: IndicatorView! { get set }
+    
+}
+
+protocol NativesBriefPresenting {
+    
+    weak var nativesLabel: UILabel! { get set }
+    
+}
+
+protocol FullForeignLexemePresenting: ForeignLexemePresenting {
 
     weak var foreignLexemeLemmaLabel: UILabel! { get set }
     weak var foreignLexemeFormsLabel: UILabel! { get set }
     // weak var permissibilityLabel: UILabel! { get set }
-    weak var permissibilityIndicator: UIView! { get set }
+    weak var permissibilityIndicator: IndicatorView! { get set }
     weak var originLabel: UILabel! { get set }
     weak var foreignLexemeMeaningLabel: UILabel! { get set }
 
 }
 
-extension ForeignLexemePresenter {
+final class ForeignLexemePresenter {
     
-    func setup(with foreignLexeme: ForeignLexeme) {
-        foreignLexemeLemmaLabel.text = foreignLexeme.lemma.view
-        foreignLexemeFormsLabel.text = foreignLexeme.forms.isEmpty ?
-            "" : "(\(foreignLexeme.forms.map({ $0.view }).joinWithSeparator(", ")))"
-        // permissibilityLabel.text = foreignLexeme.permissibility.russian
-        permissibilityIndicator.layer.cornerRadius = permissibilityIndicator.frame.height / 2
-        permissibilityIndicator.backgroundColor = foreignLexeme.permissibility.indicatorColor
-        originLabel.text = foreignLexeme.origin.view
-        foreignLexemeMeaningLabel.text = foreignLexeme.meaning
+    func present(foreignLexeme: ForeignLexeme, on presenting: ForeignLexemePresenting) {
+        presenting.foreignLexemeLemmaLabel.text = foreignLexeme.lemma.view
+        presenting.permissibilityIndicator.color = foreignLexeme.permissibility.indicatorColor
     }
+    
+    func present(foreignLexeme: ForeignLexeme, on presenting: FullForeignLexemePresenting) {
+        self.present(foreignLexeme, on: presenting as ForeignLexemePresenting)
+        presenting.foreignLexemeFormsLabel.text = foreignLexeme.forms.isEmpty ?
+            "" : "(\(foreignLexeme.forms.map({ $0.view }).joinWithSeparator(", ")))"
+        presenting.originLabel.text = foreignLexeme.origin.view
+        presenting.foreignLexemeMeaningLabel.text = foreignLexeme.meaning
+    }
+}
 
+final class NativesBriefPresenter {
+    
+    func present(entry: Entry, on presenting: NativesBriefPresenting) {
+        presenting.nativesLabel.text = entry.nativesByUsage.map({ $0.lemma.view }).joinWithSeparator(", ")
+    }
+    
 }
 
 private extension ForeignLexeme.Permissibility {

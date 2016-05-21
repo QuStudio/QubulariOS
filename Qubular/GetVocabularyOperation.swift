@@ -10,24 +10,21 @@ import Foundation
 import Operations
 import Vocabulaire
 
-class GetVocabularyOperation: GroupOperation {
+final class GetVocabularyOperation: GroupOperation {
     
     let downloadOperation: DownloadVocabularyOperation
-    let parseOperation: ParseVocabularyOperation
+    let parseOperation: LoadVocabularyFromFileOperation
     
-    init(cache: SlovarCache, completion: Void -> Void) {
+    init(cache: SlovarCache) {
         let cachesFolder = try! NSFileManager.defaultManager().URLForDirectory(.CachesDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
         let cacheFile = cachesFolder.URLByAppendingPathComponent("entries.json")
         downloadOperation = DownloadVocabularyOperation(cacheFile: cacheFile)
         let networkObserver = NetworkObserver()
         downloadOperation.addObserver(networkObserver)
-        parseOperation = ParseVocabularyOperation(cacheFile: cacheFile, vocabularyCache: cache)
+        parseOperation = LoadVocabularyFromFileOperation(file: cacheFile, vocabularyCache: cache)
         parseOperation.addDependency(downloadOperation)
         
-        let finishing = NSBlockOperation(block: completion)
-        finishing.addDependency(parseOperation)
-        
-        super.init(operations: [downloadOperation, parseOperation, finishing])
+        super.init(operations: [downloadOperation, parseOperation])
         self.name = "Get Vocabulary"
     }
     
