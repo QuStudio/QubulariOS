@@ -23,7 +23,6 @@ final class LoadVocabularyFromFileOperation: Operation {
     }
     
     override func execute() {
-        print(file)
         guard let stream = NSInputStream(URL: file) else {
             finish()
             return
@@ -44,10 +43,8 @@ final class LoadVocabularyFromFileOperation: Operation {
                     }
                 }
                 self.cache.vocabulary = entries
-                print("finishing")
                 finish()
             } else {
-                print("failed")
                 finishWithError(OperationError.ExecutionFailed)
             }
         } catch let jsonError {

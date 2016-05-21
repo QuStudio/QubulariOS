@@ -23,7 +23,7 @@ final class SlovarCache {
     init(delegate: SlovarCacheDelegate? = nil) {
         self.delegate = delegate
     }
-    
+        
 }
 
 protocol SlovarCacheDelegate: class {

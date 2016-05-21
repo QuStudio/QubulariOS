@@ -11,3 +11,7 @@ import Foundation
 protocol VocabularyControllerUser: class {
     weak var vocabularyController: VocabularyController! { get set }
 }
+
+protocol ForeignPresenterUser: class {
+    var foreignPresenter: ForeignLexemePresenter! { get set }
+}

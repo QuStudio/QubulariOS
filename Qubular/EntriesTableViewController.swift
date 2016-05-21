@@ -84,9 +84,10 @@ class EntriesTableViewController: UITableViewController, VocabularyControllerUse
         guard let identifier = segue.identifier else { return }
         switch identifier {
         case "entryDetail":
-            if let entryViewController = segue.destinationViewController as? EntryViewController {
-                entryViewController.entry = selectedEntry
-                entryViewController.foreignPresenter = foreignPresenter
+            if let destination = segue.destinationViewController as? protocol<EntryRepresenting, ForeignPresenterUser> {
+                print(destination)
+                destination.entry = selectedEntry
+                destination.foreignPresenter = foreignPresenter
             }
             
         default:

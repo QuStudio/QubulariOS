@@ -59,8 +59,8 @@
                                         <stackView contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dx6-Qe-CJ3">
                                             <rect key="frame" x="18" y="8" width="574" height="154"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtS-QM-eIz" userLabel="Indicator+Lemma">
-                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="49"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HtS-QM-eIz" userLabel="Indicator+Lemma">
+                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="50"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-Kz-3f3" customClass="IndicatorView" customModule="Qubular" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="18" width="17" height="17"/>
@@ -68,6 +68,11 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="qPU-Kz-3f3" secondAttribute="height" multiplier="1:1" id="CoZ-Ke-s2B"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                    <color key="value" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Менеджер" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-Ya-avQ">
                                                             <rect key="frame" x="25" y="0.0" width="549" height="49"/>
@@ -87,15 +92,15 @@
                                                         <constraint firstItem="qPU-Kz-3f3" firstAttribute="baseline" secondItem="XrI-Ya-avQ" secondAttribute="baseline" constant="-4" id="oBL-Xk-4wd"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="(Менеджер, Менеджуля)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHl-hr-2Q9">
-                                                    <rect key="frame" x="0.0" y="59" width="574" height="17"/>
+                                                <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="(Менеджер, Менеджуля)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHl-hr-2Q9">
+                                                    <rect key="frame" x="0.0" y="60" width="574" height="17"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" name="Bitter-Italic" family="Bitter" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="240" text="Человек, занимающий руководящую должность" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwM-yF-oNz" userLabel="Meaning">
-                                                    <rect key="frame" x="0.0" y="86" width="574" height="42"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="240" misplaced="YES" text="Человек, занимающий руководящую должность" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwM-yF-oNz" userLabel="Meaning">
+                                                    <rect key="frame" x="0.0" y="87" width="574" height="41"/>
                                                     <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -215,6 +220,11 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Dl0-ZR-y3v" secondAttribute="height" multiplier="1:1" id="8ng-gD-9CC"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                    <color key="value" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Менеджер" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pid-Hf-JkE">
                                                             <rect key="frame" x="18" y="0.0" width="558" height="30"/>
