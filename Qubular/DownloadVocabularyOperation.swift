@@ -31,6 +31,7 @@ final class DownloadVocabularyOperation: Operation {
     }
     
     enum Error: ErrorType {
+        case Cancelled
         case CantMoveItem(systemError: ErrorType?)
         case NetworkClientError(systemError: ErrorType?)
     }
@@ -40,6 +41,10 @@ final class DownloadVocabularyOperation: Operation {
 extension DownloadVocabularyOperation: NSURLSessionDownloadDelegate {
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
+        guard !cancelled else {
+            finishWithError(Error.Cancelled)
+            return
+        }
         // Possible error handling
         if let status = (downloadTask.response as? NSHTTPURLResponse)?.statusCode where status != 200 {
             print(status)
@@ -60,6 +65,10 @@ extension DownloadVocabularyOperation: NSURLSessionDownloadDelegate {
     }
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
+        guard !cancelled else {
+            finishWithError(Error.Cancelled)
+            return
+        }
         if let error = error {
             finishWithError(Error.NetworkClientError(systemError: error))
         }

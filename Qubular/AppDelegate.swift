@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let coreDataStack = CoreDataStack()
     
-    let vocabularyController = VocabularyNetworkController(apiKey: "test")
+    let vocabularyController: VocabularyController = {
+        let versionController = UserDefaultsVersionController()
+        return VocabularyNetworkController(apiKey: "test", versionController: versionController)
+    }()
+    
     let errorController = ErrorController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -27,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupWhisper() {
-        if let navigator = window?.rootViewController as? UINavigationController {
+        if let navigator = window?.rootViewController as? UINavigationController, vocabularyController = vocabularyController as? VocabularyNetworkController {
             let whisperController = WhisperController(whisperTo: navigator)
             errorController.presenter = whisperController
             vocabularyController.errorController = errorController
@@ -44,10 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupNavBar() {
         let titleAttributes = [
-            NSFontAttributeName : UIFont(name: "Bitter-Regular", size: 17)!
+            NSFontAttributeName: UIFont(name: "Bitter-Regular", size: 17)!
         ]
         UINavigationBar.appearance().titleTextAttributes = titleAttributes
-        UIBarButtonItem.appearance().setTitleTextAttributes(titleAttributes, forState: .Normal)
+        let backAttributes = [
+            NSFontAttributeName: UIFont(name: "Bitter-Regular", size: 17)!,
+            NSForegroundColorAttributeName: UIColor.lightGrayColor()
+        ]
+        UIBarButtonItem.appearance().setTitleTextAttributes(backAttributes, forState: .Normal)
     }
 
     func applicationWillResignActive(application: UIApplication) {

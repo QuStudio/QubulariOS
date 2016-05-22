@@ -17,10 +17,12 @@ class WhisperController: ErrorPresenter {
         self.navigationController = navigationController
     }
     
-    let errorCollor = UIColor(red: 128/255, green: 0, blue: 0, alpha: 1.0)
+    static let errorCollor = UIColor(red: 128/255, green: 0, blue: 0, alpha: 1.0)
     func present(errorMessage message: String) {
-        let wmessage = Message(title: message, backgroundColor: errorCollor)
-        Whisper(wmessage, to: navigationController, action: .Show)
+        onMainQueue { 
+            let wmessage = Message(title: message, backgroundColor: WhisperController.errorCollor)
+            Whisper(wmessage, to: self.navigationController, action: .Show)
+        }
     }
     
 }

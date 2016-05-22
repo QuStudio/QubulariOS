@@ -9,29 +9,37 @@
 import Foundation
 import Vocabulaire
 
-class VersionController {
+protocol VersionController: class {
+    var version: VocabularyVersion? { get set }
+}
+
+final class UserDefaultsVersionController: VersionController {
     
-    static private let defaultsKey = "com.qubular.vocabularyVersion"
+    static private let key = "com.qubular.vocabularyVersion"
+    private let defaults: NSUserDefaults
     
-    var version: VocabularyVersion
-    var latestAvailableVersion: VocabularyVersion?
-    let defaults: NSUserDefaults?
-    
-    init(defaults: NSUserDefaults? = .standardUserDefaults()) {
+    init(defaults: NSUserDefaults = .standardUserDefaults()) {
         self.defaults = defaults
-        if let versionDict = defaults?.objectForKey(VersionController.defaultsKey) as? [String: AnyObject],
-            version = try? VocabularyVersion(from: versionDict) {
-            self.version = version
-        } else {
-            self.version = .develop
-            defaults?.setObject(version.representation, forKey: VersionController.defaultsKey)
+    }
+    
+    var version: VocabularyVersion? {
+        get {
+            if let versionRepresentation = defaults.objectForKey(UserDefaultsVersionController.key) as? Structure,
+                version = try? VocabularyVersion(from: versionRepresentation) {
+                return version
+            }
+            return nil
+        }
+        set {
+            defaults.setObject(newValue?.representation, forKey: UserDefaultsVersionController.key)
         }
     }
     
-    init(version: VocabularyVersion, defaults: NSUserDefaults? = .standardUserDefaults()) {
-        self.defaults = defaults
-        self.version = version
-        defaults?.setObject(version.representation, forKey: VersionController.defaultsKey)
-    }
+}
+
+struct Versions {
+    
+    let stored: VocabularyVersion
+    let latest: VocabularyVersion
     
 }

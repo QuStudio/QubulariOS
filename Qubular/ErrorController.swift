@@ -15,16 +15,16 @@ final class ErrorController {
     static let failMessage = "Нет возможности обновить словарь"
     static let unknownErrorMessage = "Неизвестная ошибка"
     func errorDidHappen(error: ErrorType) {
-        onMainQueue {
-            print(error)
-            switch error {
-            case DownloadVocabularyOperation.Error.NetworkClientError:
-                self.presenter?.present(errorMessage: ErrorController.failMessage)
-            case ServerError.Not200:
-                self.presenter?.present(errorMessage: ErrorController.failMessage)
-            default:
-                self.presenter?.present(errorMessage: ErrorController.unknownErrorMessage)
-            }
+        debugPrint(error)
+        switch error {
+        case NewerVersionAvailableCondition.Error.LatestVersionIsAlreadyStored:
+            print("And that's totally ok")
+        case DownloadVocabularyOperation.Error.NetworkClientError:
+            self.presenter?.present(errorMessage: ErrorController.failMessage)
+        case ServerError.Not200:
+            self.presenter?.present(errorMessage: ErrorController.failMessage)
+        default:
+            self.presenter?.present(errorMessage: ErrorController.unknownErrorMessage)
         }
     }
     
