@@ -22,6 +22,11 @@ final class FakeVocabularyController: VocabularyController {
     func prepareVocabulary(completion: (Void) -> Void) {
         testFetchSlovar(completion)
     }
+    
+    func updateVocabulary(completion: (Void) -> Void) {
+        testFetchSlovar(completion)
+    }
+    
     func testFetchSlovar(completion: (Void) -> Void) {
         let queue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
         dispatch_async(queue) {

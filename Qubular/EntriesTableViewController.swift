@@ -31,7 +31,8 @@ class EntriesTableViewController: UITableViewController, VocabularyControllerUse
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
-                
+        clearsSelectionOnViewWillAppear = true
+        
         searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -43,14 +44,24 @@ class EntriesTableViewController: UITableViewController, VocabularyControllerUse
         definesPresentationContext = true
         
         entries = vocabularyController.cache.vocabulary ?? []
-        vocabularyController.prepareVocabulary { [weak self] in
+        updateDataSource()
+    }
+    
+    func updateDataSource(necessaryUpdate isNecessary: Bool = false) {
+        let completion = { [weak self] in
             print("Gotcha")
             onMainQueue {
                 if let vocabulary = self?.vocabularyController.cache.vocabulary {
                     self?.entries = vocabulary
                     self?.tableView.reloadData()
                 }
+                self?.refreshControl?.endRefreshing()
             }
+        }
+        if isNecessary {
+            vocabularyController.updateVocabulary(completion)
+        } else {
+            vocabularyController.prepareVocabulary(completion)
         }
     }
     
@@ -78,6 +89,10 @@ class EntriesTableViewController: UITableViewController, VocabularyControllerUse
         selectedEntry = entry
         searchController.searchBar.resignFirstResponder()
         performSegueWithIdentifier("entryDetail", sender: self)
+    }
+    
+    @IBAction func refreshingDidBegin(sender: UIRefreshControl) {
+        updateDataSource(necessaryUpdate: true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -109,7 +124,7 @@ extension EntriesTableViewController: UISearchResultsUpdating, UISearchControlle
         if query.characters.isEmpty {
             filteredEntries = entries
         } else {
-            filteredEntries = entries.filter({ $0.foreign.lemma.view.lowercaseString.containsString(query.lowercaseString) })
+            filteredEntries = entries.lazy.filter({ $0.isSuited(forString: query) }).sort({ $0.suitRate(forString: query) > $1.suitRate(forString: query) })
         }
         tableView.reloadData()
     }

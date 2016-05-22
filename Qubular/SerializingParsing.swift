@@ -15,7 +15,18 @@ protocol Parsable {
     init(from source: [String: AnyObject]) throws
 }
 
+extension Parsable {
+    init(from data: NSData) throws {
+        if let source = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? Structure {
+            try self.init(from: source)
+        } else {
+            throw ParseError.InvalidJSONStructure
+        }
+    }
+}
+
 enum ParseError: ErrorType {
+    case InvalidJSONStructure
     case parseFailed
     case morpheme
     case foreignLexeme

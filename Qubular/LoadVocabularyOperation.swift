@@ -14,12 +14,20 @@ final class LoadVocabularyFromFileOperation: Operation {
     
     let cache: SlovarCache
     let file: NSURL
+    let versionController: VersionController?
     
-    init(file: NSURL, vocabularyCache: SlovarCache) {
+    init(file: NSURL, vocabularyCache: SlovarCache, versionController: VersionController? = nil) {
         self.file = file
         self.cache = vocabularyCache
+        self.versionController = versionController
         super.init()
         self.name = "Parse Vocabulary"
+    }
+    
+    enum Error: ErrorType {
+        case InvalidJSONStructure
+        case NoVersionInJSON
+        case JSONSerializationError(systemError: ErrorType?)
     }
     
     override func execute() {
@@ -34,22 +42,23 @@ final class LoadVocabularyFromFileOperation: Operation {
         do {
             if let json = try NSJSONSerialization.JSONObjectWithStream(stream, options: [.AllowFragments]) as? [String: AnyObject],
                 jentries = json["entries"] as? [[String: AnyObject]] {
-                let entries: [Entry] = jentries.flatMap {
-                    do {
-                        return try Entry(from: $0)
-                    } catch let error {
-                        print(error, $0)
-                        return nil
+                let entries: [Entry] = jentries.flatMap({ try? Entry(from: $0) })
+                self.cache.vocabulary = entries
+                if let versionController = versionController {
+                    if let newVersion = (json["version"] as? Structure).flatMap({ try? VocabularyVersion(from: $0) }) {
+                        versionController.version = newVersion
+                    } else {
+                        finishWithError(Error.NoVersionInJSON)
+                        return
                     }
                 }
-                self.cache.vocabulary = entries
                 finish()
             } else {
-                finishWithError(OperationError.ExecutionFailed)
+                finishWithError(Error.InvalidJSONStructure)
             }
         } catch let jsonError {
             print(jsonError)
-            finishWithError(jsonError)
+            finishWithError(Error.JSONSerializationError(systemError: jsonError))
         }
     }
     

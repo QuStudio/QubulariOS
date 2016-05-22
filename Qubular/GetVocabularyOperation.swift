@@ -15,13 +15,13 @@ final class GetVocabularyOperation: GroupOperation {
     let downloadOperation: DownloadVocabularyOperation
     let parseOperation: LoadVocabularyFromFileOperation
     
-    init(cache: SlovarCache) {
+    init(cache: SlovarCache, versionController: VersionController? = nil) {
         let cachesFolder = try! NSFileManager.defaultManager().URLForDirectory(.CachesDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
         let cacheFile = cachesFolder.URLByAppendingPathComponent("entries.json")
         downloadOperation = DownloadVocabularyOperation(cacheFile: cacheFile)
         let networkObserver = NetworkObserver()
         downloadOperation.addObserver(networkObserver)
-        parseOperation = LoadVocabularyFromFileOperation(file: cacheFile, vocabularyCache: cache)
+        parseOperation = LoadVocabularyFromFileOperation(file: cacheFile, vocabularyCache: cache, versionController: versionController)
         parseOperation.addDependency(downloadOperation)
         
         super.init(operations: [downloadOperation, parseOperation])

@@ -13,13 +13,15 @@ import Operations
 protocol VocabularyController: class {
     var cache: SlovarCache { get }
     func prepareVocabulary(completion: (Void) -> Void)
+    func updateVocabulary(completion: (Void) -> Void)
 }
 
 final class VocabularyNetworkController: VocabularyController {
     
     let apiKey: String
     let cache: SlovarCache
-    weak var errorController: ErrorController?
+    let versionController: VersionController
+    var errorController: ErrorController?
     private let operationQueue = OperationQueue()
     private let logObserver = LogObserver()
     
@@ -30,8 +32,9 @@ final class VocabularyNetworkController: VocabularyController {
     }()
     
     private let initialLoadOperation: LoadVocabularyFromFileOperation
-    init(apiKey: String) {
+    init(apiKey: String, versionController: VersionController) {
         self.apiKey = apiKey
+        self.versionController = versionController
         self.cache = SlovarCache()
         self.initialLoadOperation = LoadVocabularyFromFileOperation(file: entriesFileURL, vocabularyCache: cache)
         initialLoadOperation.observe { (operation) in
@@ -56,15 +59,22 @@ final class VocabularyNetworkController: VocabularyController {
         fetchVocabulary(completion)
     }
     
+    func updateVocabulary(completion: (Void) -> Void) {
+        fetchVocabulary(completion)
+    }
+    
     private func fetchVocabulary(completion: (Void) -> Void) {
-        let getOperation = GetVocabularyOperation(cache: cache)
-        getOperation.observe { (operation) in
+        let getOperation = GetVocabularyOperation(cache: cache, versionController: versionController)
+        let onlyIfNotLatest = NewerVersionAvailableCondition(versionController: versionController, developSupport: true)
+        getOperation.addCondition(onlyIfNotLatest)
+        getOperation.observe { operation in
             operation.didFinish { _ in
                 completion()
             }
             operation.didFailed { (errors) in
                 print(self.errorController)
                 errors.forEach({ self.errorController?.errorDidHappen($0) })
+                completion()
             }
         }
         getOperation.qualityOfService = .UserInitiated
