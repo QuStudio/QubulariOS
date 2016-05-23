@@ -34,13 +34,3 @@ final class SlovarCache {
 protocol SlovarCacheDelegate: class {
     func cacheDidUpdate(cache: SlovarCache)
 }
-
-private class Book {
-    
-    var vocabulary: Vocabulary
-    
-    init(vocabulary: Vocabulary) {
-        self.vocabulary = vocabulary
-    }
-    
-}

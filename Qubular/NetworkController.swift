@@ -73,7 +73,14 @@ final class VocabularyNetworkController: VocabularyController {
             }
             operation.didFailed { (errors) in
                 print(self.errorController)
-                errors.forEach({ self.errorController?.errorDidHappen($0) })
+                for error in errors {
+                    switch error {
+                    case NewerVersionAvailableCondition.Error.LatestVersionIsAlreadyStored:
+                        print("And that's totally fine")
+                    default:
+                        self.errorController?.errorDidHappen(error)
+                    }
+                }
                 completion()
             }
         }
