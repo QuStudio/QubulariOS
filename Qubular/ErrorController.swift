@@ -17,8 +17,6 @@ final class ErrorController {
     func errorDidHappen(error: ErrorType) {
         debugPrint(error)
         switch error {
-        case NewerVersionAvailableCondition.Error.LatestVersionIsAlreadyStored:
-            print("And that's totally ok")
         case DownloadVocabularyOperation.Error.NetworkClientError:
             self.presenter?.present(errorMessage: ErrorController.failMessage)
         case ServerError.Not200:

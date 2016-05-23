@@ -21,7 +21,6 @@ protocol FullForeignLexemePresenting: ForeignLexemePresenting {
 
     weak var foreignLexemeLemmaLabel: UILabel! { get set }
     weak var foreignLexemeFormsLabel: UILabel! { get set }
-    // weak var permissibilityLabel: UILabel! { get set }
     weak var permissibilityIndicator: IndicatorView! { get set }
     weak var originLabel: UILabel! { get set }
     weak var foreignLexemeMeaningLabel: UILabel! { get set }
