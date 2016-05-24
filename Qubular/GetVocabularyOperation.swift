@@ -26,7 +26,7 @@ final class GetVocabularyOperation: GroupOperation {
         
         super.init(operations: [downloadOperation, parseOperation])
         downloadOperation.observe { (operation) in
-            operation.didFailed { errors in
+            operation.didFail { errors in
                 self.finish(errors)
                 self.parseOperation.cancel()
             }
