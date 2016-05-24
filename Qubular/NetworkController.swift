@@ -74,12 +74,7 @@ final class VocabularyNetworkController: VocabularyController {
             operation.didFail { (errors) in
                 print(self.errorController)
                 for error in errors {
-                    switch error {
-                    case NewerVersionAvailableCondition.Error.LatestVersionIsAlreadyStored:
-                        print("And that's totally fine")
-                    default:
-                        self.errorController?.errorDidHappen(error)
-                    }
+                    self.errorController?.errorDidHappen(error)
                 }
                 completion()
             }

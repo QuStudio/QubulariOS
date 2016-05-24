@@ -19,7 +19,7 @@
 		BE6B10881CF093EB00616E32 /* LogObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10871CF093EA00616E32 /* LogObserver.swift */; };
 		BE6B108A1CF0947F00616E32 /* FakeVocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10891CF0947F00616E32 /* FakeVocabularyController.swift */; };
 		BE6B108C1CF09A7900616E32 /* WhisperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108B1CF09A7900616E32 /* WhisperController.swift */; };
-		BE6B108E1CF09B7100616E32 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108D1CF09B7100616E32 /* ErrorPresenter.swift */; };
+		BE6B108E1CF09B7100616E32 /* MessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108D1CF09B7100616E32 /* MessagePresenter.swift */; };
 		BE6B10901CF09C9400616E32 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B108F1CF09C9400616E32 /* ErrorController.swift */; };
 		BE6B10921CF09F4C00616E32 /* Whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B10911CF09F4C00616E32 /* Whisper.framework */; };
 		BE6B10A31CF1BD6600616E32 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10A21CF1BD6600616E32 /* Searchable.swift */; };
@@ -85,7 +85,7 @@
 		BE6B10871CF093EA00616E32 /* LogObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogObserver.swift; sourceTree = "<group>"; };
 		BE6B10891CF0947F00616E32 /* FakeVocabularyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeVocabularyController.swift; sourceTree = "<group>"; };
 		BE6B108B1CF09A7900616E32 /* WhisperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperController.swift; sourceTree = "<group>"; };
-		BE6B108D1CF09B7100616E32 /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		BE6B108D1CF09B7100616E32 /* MessagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePresenter.swift; sourceTree = "<group>"; };
 		BE6B108F1CF09C9400616E32 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		BE6B10911CF09F4C00616E32 /* Whisper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Whisper.framework; path = Carthage/Build/iOS/Whisper.framework; sourceTree = "<group>"; };
 		BE6B10A21CF1BD6600616E32 /* Searchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		BE8BC0461CCF6859007373C8 /* Qubular */ = {
 			isa = PBXGroup;
 			children = (
-				BE6B108D1CF09B7100616E32 /* ErrorPresenter.swift */,
+				BE6B108D1CF09B7100616E32 /* MessagePresenter.swift */,
 				BE143C6F1CE5E53500F984B4 /* View Logic */,
 				BE143C6E1CE5E51700F984B4 /* App Logic */,
 				BE6BBDFF1CF43C6E00F5886D /* Extensions */,
@@ -482,7 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6B108E1CF09B7100616E32 /* ErrorPresenter.swift in Sources */,
+				BE6B108E1CF09B7100616E32 /* MessagePresenter.swift in Sources */,
 				BE1D5E721CEF8AA100B90A28 /* EntryTableViewCell.swift in Sources */,
 				BEFD750F1CD65D930066A71B /* GetVocabularyOperation.swift in Sources */,
 				BEFD74F01CD64B550066A71B /* DownloadVocabularyOperation.swift in Sources */,
