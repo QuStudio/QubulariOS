@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class IndicatorView: UIView {
+class IndicatorView: UIView {
 
     enum Shape {
         case Circle
