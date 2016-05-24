@@ -31,11 +31,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="ffG-M5-NIM">
-                            <rect key="frame" x="0.0" y="317" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="302" width="600" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавлено пользователем flo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvy-dx-5Tq">
-                                    <rect key="frame" x="16" y="14" width="562" height="15"/>
+                                    <rect key="frame" x="16" y="10" width="562" height="15"/>
                                     <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="12"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -141,22 +141,55 @@
                                     <outlet property="permissibilityIndicator" destination="qPU-Kz-3f3" id="EcW-Lj-DFH"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nativeCell" textLabel="hrV-DD-Eg7" rowHeight="55" style="IBUITableViewCellStyleDefault" id="sd5-bD-69Z">
-                                <rect key="frame" x="0.0" y="262" width="600" height="55"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nativeCell" rowHeight="40" id="sd5-bD-69Z" customClass="NativeTableViewCell" customModule="Qubular" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="262" width="600" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sd5-bD-69Z" id="Rzt-tr-odh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hrV-DD-Eg7">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="55"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Руководитель" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lst-Y3-dAf">
+                                            <rect key="frame" x="18" y="14" width="136" height="21"/>
+                                            <fontDescription key="fontDescription" name="Bitter-Regular" family="Bitter" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-fG-x3y" customClass="IndicatorView" customModule="Qubular" customModuleProvider="target">
+                                            <rect key="frame" x="159" y="21" width="9" height="9"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Ifo-fG-x3y" secondAttribute="height" multiplier="1:1" id="6NC-Rr-80h"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                    <color key="value" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ifo-fG-x3y" firstAttribute="leading" secondItem="Lst-Y3-dAf" secondAttribute="trailing" constant="5" id="3uZ-MP-5JV"/>
+                                        <constraint firstItem="Lst-Y3-dAf" firstAttribute="centerY" secondItem="Rzt-tr-odh" secondAttribute="centerY" id="B2e-dd-bn2"/>
+                                        <constraint firstItem="Lst-Y3-dAf" firstAttribute="top" secondItem="Rzt-tr-odh" secondAttribute="topMargin" constant="1" id="H1b-uK-dsm"/>
+                                        <constraint firstItem="Ifo-fG-x3y" firstAttribute="height" secondItem="Lst-Y3-dAf" secondAttribute="height" multiplier="0.4" id="I2a-K1-mH4"/>
+                                        <constraint firstAttribute="bottom" secondItem="Lst-Y3-dAf" secondAttribute="bottom" constant="5" id="QW2-NY-8yk"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ifo-fG-x3y" secondAttribute="trailing" constant="10" id="WMk-mT-cvK"/>
+                                        <constraint firstItem="Lst-Y3-dAf" firstAttribute="leading" secondItem="Rzt-tr-odh" secondAttribute="leadingMargin" constant="10" id="bFX-SF-tWY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Lst-Y3-dAf" secondAttribute="bottom" id="lmc-fc-kPu"/>
+                                        <constraint firstItem="Ifo-fG-x3y" firstAttribute="centerY" secondItem="Lst-Y3-dAf" secondAttribute="centerY" constant="1" id="pe4-rg-ZVa"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="B2e-dd-bn2"/>
+                                            <exclude reference="H1b-uK-dsm"/>
+                                            <exclude reference="lmc-fc-kPu"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lemmaLabel" destination="Lst-Y3-dAf" id="PKB-Lq-vBo"/>
+                                    <outlet property="usageIndicator" destination="Ifo-fG-x3y" id="bgB-SH-1zg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

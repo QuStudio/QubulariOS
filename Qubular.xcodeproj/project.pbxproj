@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0519221CF4B867002EFE91 /* NativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0519211CF4B867002EFE91 /* NativeTableViewCell.swift */; };
+		BE0519241CF4BE45002EFE91 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0519231CF4BE45002EFE91 /* UIFont.swift */; };
+		BE0519261CF4C956002EFE91 /* NativesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0519251CF4C956002EFE91 /* NativesHeaderView.swift */; };
+		BE0519281CF4C987002EFE91 /* NativesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0519271CF4C987002EFE91 /* NativesHeaderView.xib */; };
 		BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6A1CE4DE8500F984B4 /* Version.swift */; };
 		BE143C6D1CE4E0DC00F984B4 /* NewerVersionAvailableCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143C6C1CE4E0DC00F984B4 /* NewerVersionAvailableCondition.swift */; };
 		BE1D5E701CEF88AB00B90A28 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D5E6F1CEF88AB00B90A28 /* IndicatorView.swift */; };
@@ -14,7 +18,7 @@
 		BE4772951CE7326D00FF8DAC /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */; };
 		BE4772971CE733F200FF8DAC /* Users Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772961CE733F200FF8DAC /* Users Protocols.swift */; };
 		BE47729B1CE7551A00FF8DAC /* SaveVocabularyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47729A1CE7551A00FF8DAC /* SaveVocabularyOperation.swift */; };
-		BE6B10841CF0914300616E32 /* NativesBriefPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10831CF0914300616E32 /* NativesBriefPresenter.swift */; };
+		BE6B10841CF0914300616E32 /* NativePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10831CF0914300616E32 /* NativePresenter.swift */; };
 		BE6B10861CF0918200616E32 /* EntryRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10851CF0918200616E32 /* EntryRepresenting.swift */; };
 		BE6B10881CF093EB00616E32 /* LogObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10871CF093EA00616E32 /* LogObserver.swift */; };
 		BE6B108A1CF0947F00616E32 /* FakeVocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B10891CF0947F00616E32 /* FakeVocabularyController.swift */; };
@@ -73,6 +77,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE0519211CF4B867002EFE91 /* NativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTableViewCell.swift; sourceTree = "<group>"; };
+		BE0519231CF4BE45002EFE91 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		BE0519251CF4C956002EFE91 /* NativesHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativesHeaderView.swift; sourceTree = "<group>"; };
+		BE0519271CF4C987002EFE91 /* NativesHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativesHeaderView.xib; sourceTree = "<group>"; };
 		BE143C6A1CE4DE8500F984B4 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		BE143C6C1CE4E0DC00F984B4 /* NewerVersionAvailableCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewerVersionAvailableCondition.swift; sourceTree = "<group>"; };
 		BE1D5E6F1CEF88AB00B90A28 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
@@ -80,7 +88,7 @@
 		BE4772941CE7326D00FF8DAC /* EntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		BE4772961CE733F200FF8DAC /* Users Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Users Protocols.swift"; sourceTree = "<group>"; };
 		BE47729A1CE7551A00FF8DAC /* SaveVocabularyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveVocabularyOperation.swift; sourceTree = "<group>"; };
-		BE6B10831CF0914300616E32 /* NativesBriefPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativesBriefPresenter.swift; sourceTree = "<group>"; };
+		BE6B10831CF0914300616E32 /* NativePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativePresenter.swift; sourceTree = "<group>"; };
 		BE6B10851CF0918200616E32 /* EntryRepresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryRepresenting.swift; sourceTree = "<group>"; };
 		BE6B10871CF093EA00616E32 /* LogObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogObserver.swift; sourceTree = "<group>"; };
 		BE6B10891CF0947F00616E32 /* FakeVocabularyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeVocabularyController.swift; sourceTree = "<group>"; };
@@ -155,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE0519291CF4C98F002EFE91 /* NativesHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BE0519251CF4C956002EFE91 /* NativesHeaderView.swift */,
+				BE0519271CF4C987002EFE91 /* NativesHeaderView.xib */,
+			);
+			name = NativesHeaderView;
+			sourceTree = "<group>";
+		};
 		BE143C6E1CE5E51700F984B4 /* App Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +200,7 @@
 			children = (
 				BE8BC0871CCFACE0007373C8 /* Dispatch.swift */,
 				BE6BBE001CF43C8E00F5886D /* NSAttributedString.swift */,
+				BE0519231CF4BE45002EFE91 /* UIFont.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +283,8 @@
 				BE8E8D391CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift */,
 				BE1D5E6F1CEF88AB00B90A28 /* IndicatorView.swift */,
 				BE1D5E711CEF8AA100B90A28 /* EntryTableViewCell.swift */,
+				BE0519211CF4B867002EFE91 /* NativeTableViewCell.swift */,
+				BE0519291CF4C98F002EFE91 /* NativesHeaderView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -303,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				BE8BC09A1CD13622007373C8 /* ForeignLexemePresenter.swift */,
-				BE6B10831CF0914300616E32 /* NativesBriefPresenter.swift */,
+				BE6B10831CF0914300616E32 /* NativePresenter.swift */,
 				BE6B10851CF0918200616E32 /* EntryRepresenting.swift */,
 			);
 			name = Presenters;
@@ -439,6 +459,7 @@
 				BE8BC0971CD12A21007373C8 /* Bitter-Italic.otf in Resources */,
 				BE8BC0961CD12A21007373C8 /* Bitter-BoldItalic.otf in Resources */,
 				BE8BC04D1CCF6859007373C8 /* Main.storyboard in Resources */,
+				BE0519281CF4C987002EFE91 /* NativesHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,11 +515,12 @@
 				BEFD750D1CD65BA50066A71B /* LoadVocabularyOperation.swift in Sources */,
 				BE4772971CE733F200FF8DAC /* Users Protocols.swift in Sources */,
 				BE6B10861CF0918200616E32 /* EntryRepresenting.swift in Sources */,
-				BE6B10841CF0914300616E32 /* NativesBriefPresenter.swift in Sources */,
+				BE6B10841CF0914300616E32 /* NativePresenter.swift in Sources */,
 				BE1D5E701CEF88AB00B90A28 /* IndicatorView.swift in Sources */,
 				BE6B108A1CF0947F00616E32 /* FakeVocabularyController.swift in Sources */,
 				BE143C6D1CE4E0DC00F984B4 /* NewerVersionAvailableCondition.swift in Sources */,
 				BE8BC0801CCF964C007373C8 /* NetworkController.swift in Sources */,
+				BE0519241CF4BE45002EFE91 /* UIFont.swift in Sources */,
 				BE8E8D3A1CE3A4E0004238FB /* ForeignLexemeHeaderTableViewCell.swift in Sources */,
 				BE143C6B1CE4DE8500F984B4 /* Version.swift in Sources */,
 				BE8BC0841CCF9F02007373C8 /* CoreDataStack.swift in Sources */,
@@ -511,7 +533,9 @@
 				BEFD74EB1CD63BFC0066A71B /* SerializingParsing.swift in Sources */,
 				BE8BC0501CCF6859007373C8 /* Qubular.xcdatamodeld in Sources */,
 				BE47729B1CE7551A00FF8DAC /* SaveVocabularyOperation.swift in Sources */,
+				BE0519261CF4C956002EFE91 /* NativesHeaderView.swift in Sources */,
 				BE8BC0881CCFACE0007373C8 /* Dispatch.swift in Sources */,
+				BE0519221CF4B867002EFE91 /* NativeTableViewCell.swift in Sources */,
 				BE8BC08D1CD11AFF007373C8 /* SlovarCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

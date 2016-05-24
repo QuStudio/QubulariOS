@@ -18,12 +18,18 @@ class EntryViewController: UITableViewController, EntryRepresenting, ForeignPres
     // MARK: - Core
     
     var entry: Entry?
+    lazy var nativePresenter: NativePresenter? = self.entry.map({ NativePresenter(natives: $0.nativesByUsage) })
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = entry?.foreign.lemma.view
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 400
+        tableView.estimatedRowHeight = 100
+        
+        // registering nib
+        let nib = UINib(nibName: "NativesHeaderView", bundle: nil)
+        tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "nativeHeader")
+        
         addedByLabel.text = entry?.author.map({ "Добавлено пользователем \($0.username)" }) ?? ""
         // Do any additional setup after loading the view.
     }
@@ -39,6 +45,28 @@ class EntryViewController: UITableViewController, EntryRepresenting, ForeignPres
         return 2
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return 25
+        default:
+            return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return UITableViewAutomaticDimension
+        case 1:
+            return 35
+        default:
+            return UITableViewAutomaticDimension
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -47,6 +75,19 @@ class EntryViewController: UITableViewController, EntryRepresenting, ForeignPres
             return entry?.natives.count ?? 0
         default:
             return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 1:
+            let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("nativeHeader") as? NativesHeaderView
+            header?.titleLabel.text = "Альтернативы:"
+            let bitter = UIFont.bitter(ofSize: 15)
+            header?.titleLabel.font = bitter
+            return header
+        default:
+            return nil
         }
     }
     
@@ -61,11 +102,8 @@ class EntryViewController: UITableViewController, EntryRepresenting, ForeignPres
             return cell
             
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("nativeCell", forIndexPath: indexPath)
-            if let entry = entry {
-                let native = entry.nativesByUsage[indexPath.row]
-                cell.textLabel?.text = native.lemma.view
-            }
+            let cell = tableView.dequeueReusableCellWithIdentifier("nativeCell", forIndexPath: indexPath) as! NativeTableViewCell
+            nativePresenter?.present(nativeAt: indexPath.row, on: cell)
             return cell
         }
     }
