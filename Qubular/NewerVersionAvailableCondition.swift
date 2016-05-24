@@ -27,7 +27,7 @@ class NewerVersionAvailableCondition: OperationCondition {
     func dependencyForOperation(operation: Operation) -> NSOperation? {
         let checkVersion = CheckVersionOperation()
         checkVersion.observe { (operation) in
-            operation.didFinish { _ in
+            operation.didSuccess {
                 if let newest = checkVersion.latestVersion, current = self.versionController.version {
                     self.versions = Versions(stored: current, latest: newest)
                 }

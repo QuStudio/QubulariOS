@@ -38,10 +38,10 @@ final class VocabularyNetworkController: VocabularyController {
         self.cache = SlovarCache()
         self.initialLoadOperation = LoadVocabularyFromFileOperation(file: entriesFileURL, vocabularyCache: cache)
         initialLoadOperation.observe { (operation) in
-            operation.didFinish { _ in
+            operation.didSuccess {
                 print("Loaded!")
             }
-            operation.didFailed {
+            operation.didFail {
                 debugPrint($0)
             }
         }
@@ -68,10 +68,10 @@ final class VocabularyNetworkController: VocabularyController {
         let onlyIfNotLatest = NewerVersionAvailableCondition(versionController: versionController, developSupport: true)
         getOperation.addCondition(onlyIfNotLatest)
         getOperation.observe { operation in
-            operation.didFinish { _ in
+            operation.didSuccess {
                 completion()
             }
-            operation.didFailed { (errors) in
+            operation.didFail { (errors) in
                 print(self.errorController)
                 for error in errors {
                     switch error {
