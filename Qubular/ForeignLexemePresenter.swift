@@ -12,18 +12,18 @@ import UIKit
 
 protocol ForeignLexemePresenting {
     
-    weak var foreignLexemeLemmaLabel: UILabel! { get set }
-    weak var permissibilityIndicator: IndicatorView! { get set }
+    weak var foreignLexemeLemmaLabel: UILabel! { get }
+    weak var permissibilityIndicator: IndicatorView! { get }
     
 }
 
 protocol FullForeignLexemePresenting: ForeignLexemePresenting {
 
-    weak var foreignLexemeLemmaLabel: UILabel! { get set }
-    weak var foreignLexemeFormsLabel: UILabel! { get set }
-    weak var permissibilityIndicator: IndicatorView! { get set }
-    weak var originLabel: UILabel! { get set }
-    weak var foreignLexemeMeaningLabel: UILabel! { get set }
+    weak var foreignLexemeLemmaLabel: UILabel! { get }
+    weak var foreignLexemeFormsLabel: UILabel! { get }
+    weak var permissibilityIndicator: IndicatorView! { get }
+    weak var originLabel: UILabel! { get }
+    weak var foreignLexemeMeaningLabel: UILabel! { get }
 
 }
 

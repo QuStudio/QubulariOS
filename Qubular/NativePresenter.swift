@@ -12,7 +12,7 @@ import Vocabulaire
 
 protocol NativesBriefPresenting {
     
-    weak var nativesLabel: UILabel! { get set }
+    weak var nativesLabel: UILabel! { get }
     
 }
 
